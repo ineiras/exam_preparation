@@ -3,84 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0e1220">
-<title>Examen AA · UOC — Estudio y Simulacro</title>
+<meta name="theme-color" content="#0a0e1d">
+<title>Examen AA · UOC — Estudio inteligente</title>
 <style>
 :root{
-  --bg:#0e1220; --bg2:#141a30; --card:#1a2140; --card2:#222a52; --card3:#2a3263;
-  --txt:#e9ecfb; --muted:#98a0cc; --line:#323a6e;
-  --acc:#7c8cff; --acc2:#4cc7ff; --gold:#ffc24c;
-  --ok:#2bd49e; --okbg:#0c3a2d; --bad:#ff5e7a; --badbg:#3d0e1f; --warn:#ffb454;
+  --bg:#0a0e1d; --bg2:#10162d; --card:#161d38; --card2:#1f2747; --card3:#293359;
+  --txt:#edf0fd; --muted:#949cc8; --line:#2c3563; --line2:#3b4680;
+  --acc:#8b9aff; --acc2:#53cdff; --gold:#ffc95c; --vio:#c89bff;
+  --ok:#34dca4; --okbg:#0b3b2e; --bad:#ff6584; --badbg:#41112350; --badbg2:#3d0f20; --warn:#ffb55e;
+  --grad:linear-gradient(95deg,#8b9aff,#53cdff);
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:linear-gradient(165deg,var(--bg),var(--bg2) 60%,#101630);color:var(--txt);
-  min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:920px;margin:0 auto;padding:18px 16px 96px}
-h1{font-size:22px;margin:4px 0 2px}
-h2{font-size:18px;margin:0 0 12px}
-h3{font-size:15.5px;margin:0 0 8px}
-.sub{color:var(--muted);font-size:13.5px;margin:0 0 18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+  background:
+    radial-gradient(1100px 500px at 85% -10%, #232c5a66, transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, #1b234a88, transparent 55%),
+    linear-gradient(170deg,var(--bg),var(--bg2));
+  background-attachment:fixed;
+  color:var(--txt);min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:14px 16px 100px}
+h1{font-size:21px;margin:6px 0 2px;letter-spacing:.2px}
+h2{font-size:17px;margin:0 0 12px}
+h3{font-size:15px;margin:0 0 8px}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 16px}
+.grtxt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:linear-gradient(180deg,var(--card),#141a33);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 8px 28px rgba(0,0,0,.32)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.mode{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;transition:.15s;text-align:left;color:var(--txt)}
-.mode:hover{border-color:var(--acc);transform:translateY(-2px)}
-.mode h3{margin:0 0 5px;font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.mode{background:linear-gradient(180deg,var(--card2),#1a2240);border:1px solid var(--line);border-radius:16px;padding:15px;cursor:pointer;transition:.18s;text-align:left;color:var(--txt);position:relative;overflow:hidden}
+.mode:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.mode:active{transform:scale(.985)}
+.mode h3{margin:0 0 5px;font-size:14.8px}
 .mode p{margin:0;color:var(--muted);font-size:12.6px}
-.mode .ico{font-size:21px;margin-bottom:7px}
-.btn{background:var(--acc);color:#fff;border:none;border-radius:11px;padding:11px 18px;font-size:14.5px;font-weight:600;cursor:pointer;transition:.15s}
-.btn:hover{filter:brightness(1.12)}
-.btn:disabled{opacity:.45;cursor:not-allowed}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
-.btn.sm{padding:7px 13px;font-size:13px}
+.mode .ico{font-size:22px;margin-bottom:8px}
+.btn{background:var(--grad);color:#0a1020;border:none;border-radius:12px;padding:12px 19px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.16s;box-shadow:0 4px 16px #53cdff2e}
+.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn.ghost{background:transparent;border:1px solid var(--line2);color:var(--txt);box-shadow:none}
+.btn.sm{padding:8px 14px;font-size:13px;border-radius:10px}
 .btn.ok{background:var(--ok);color:#04261d}
 .btn.bad{background:var(--bad);color:#fff}
 .btn.warn{background:var(--warn);color:#3a2300}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .spacer{flex:1}
-.pill{display:inline-block;background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:3px 11px;font-size:12px;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--muted)}
 .pill.acc{color:var(--acc2);border-color:var(--acc)}
-.opt{display:block;width:100%;text-align:left;background:var(--card2);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;margin:9px 0;cursor:pointer;color:var(--txt);font-size:14.5px;transition:.12s;line-height:1.45}
-.opt:hover:not(:disabled){border-color:var(--acc)}
+.pill.hot{color:var(--gold);border-color:var(--gold)}
+/* ===== opciones de pregunta ===== */
+.opt{display:block;width:100%;text-align:left;background:var(--card2);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;margin:9px 0;cursor:pointer;color:var(--txt);font-size:14.6px;transition:.14s;line-height:1.45}
+.opt:hover:not(:disabled){border-color:var(--acc);transform:translateX(3px)}
 .opt:disabled{cursor:default}
-.opt .lt{display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;background:var(--card);border-radius:7px;margin-right:10px;font-weight:700;font-size:13px;flex:none}
+.opt .lt{display:inline-block;width:25px;height:25px;line-height:25px;text-align:center;background:var(--card);border-radius:8px;margin-right:11px;font-weight:800;font-size:12.5px;flex:none;color:var(--muted)}
 .opt.sel{border-color:var(--acc2);background:var(--card3)}
-.opt.correct{border-color:var(--ok);background:var(--okbg)}
+.opt.sel .lt{background:var(--acc2);color:#06283b}
+.opt.correct{border-color:var(--ok);background:var(--okbg);animation:pop .35s ease}
 .opt.correct .lt{background:var(--ok);color:#04261d}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg2);animation:shake .4s ease}
 .opt.wrong .lt{background:var(--bad);color:#3a0011}
-.qtext{font-size:16px;font-weight:600;margin:6px 0 12px}
-.feed{border-radius:12px;padding:13px 15px;margin-top:12px;font-size:14px;display:none}
+.opt.dim{opacity:.55}
+@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.025)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translateY(105vh) rotate(640deg);opacity:.1}}
+.view{animation:fadeUp .24s ease}
+.qtext{font-size:16.2px;font-weight:650;margin:6px 0 12px;line-height:1.5}
+/* ===== feedback de respuesta ===== */
+.feed{border-radius:14px;padding:14px 16px;margin-top:12px;font-size:14px;display:none;animation:fadeUp .25s ease}
 .feed.show{display:block}
 .feed.good{background:var(--okbg);border:1px solid var(--ok)}
-.feed.bad{background:var(--badbg);border:1px solid var(--bad)}
-.feed b{color:var(--acc2)}
-.bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin:14px 0}
-.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));width:0;transition:.3s}
-.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px}
-.timer.danger{color:var(--bad)}
+.feed.bad{background:var(--badbg2);border:1px solid var(--bad)}
+.feed .ttl{font-weight:800;font-size:14.5px;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.feed .why{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line2);color:#ffd9e1}
+.feed .why b{color:var(--bad)}
+.feed .exp b{color:var(--acc2)}
+.srschip{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--muted);background:var(--card2);border:1px solid var(--line);border-radius:99px;padding:3px 10px}
+.bar{height:9px;background:var(--card2);border-radius:99px;overflow:hidden;margin:12px 0}
+.bar>i{display:block;height:100%;background:var(--grad);width:0;transition:.35s ease}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:15px}
+.timer.danger{color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.55}}
 .stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;gap:10px}
 .stat:last-child{border:none}
-.big{font-size:34px;font-weight:800;margin:4px 0}
+.big{font-size:34px;font-weight:800;margin:2px 0}
 .muted{color:var(--muted)}
-.ok-t{color:var(--ok)} .bad-t{color:var(--bad)} .warn-t{color:var(--warn)} .acc-t{color:var(--acc2)}
-.mini{height:7px;background:var(--card2);border-radius:99px;overflow:hidden}
-.mini>i{display:block;height:100%;border-radius:99px}
-.mb{margin:9px 0}
+.ok-t{color:var(--ok)} .bad-t{color:var(--bad)} .warn-t{color:var(--warn)} .acc-t{color:var(--acc2)} .gold-t{color:var(--gold)}
+.mini{height:8px;background:var(--card2);border-radius:99px;overflow:hidden}
+.mini>i{display:block;height:100%;border-radius:99px;transition:.4s}
+.mb{margin:10px 0}
 .mb .lbl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
-.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
+.footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:22px;opacity:.8}
 .hide{display:none}
-.qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:8px;flex-wrap:wrap}
-.toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);background:var(--card3);border:1px solid var(--line);padding:9px 16px;border-radius:10px;font-size:13px;opacity:0;transition:.3s;pointer-events:none;z-index:60;max-width:90vw;text-align:center}
+.qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:8px;flex-wrap:wrap}
+.toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:var(--card3);border:1px solid var(--line2);padding:10px 18px;border-radius:12px;font-size:13px;opacity:0;transition:.3s;pointer-events:none;z-index:80;max-width:90vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .toast.show{opacity:1}
+/* ===== top bar ===== */
+.topbar{display:flex;align-items:center;gap:10px;padding:4px 2px 10px}
+.topbar .logo{font-weight:800;font-size:15px}
+.topbar .tpill{font-size:12px;background:var(--card2);border:1px solid var(--line);border-radius:99px;padding:4px 11px;display:flex;align-items:center;gap:5px}
+/* ===== anillo de progreso ===== */
+.ring{position:relative;width:108px;height:108px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring .rtxt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .rtxt b{font-size:23px}
+.ring .rtxt span{font-size:10.5px;color:var(--muted)}
 /* ===== bottom nav ===== */
-.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(16,21,42,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(8px + env(safe-area-inset-bottom));z-index:50}
-.nav button{background:none;border:none;color:var(--muted);font-size:10.5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 8px;border-radius:10px;min-width:54px}
-.nav button .nico{font-size:19px;line-height:1}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#0c1124ee;backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:7px 4px calc(9px + env(safe-area-inset-bottom));z-index:50}
+.nav button{background:none;border:none;color:var(--muted);font-size:10.5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 9px;border-radius:12px;min-width:56px;transition:.15s}
+.nav button .nico{font-size:20px;line-height:1;transition:.15s}
 .nav button.active{color:var(--acc2)}
-/* ===== theory styles ===== */
+.nav button.active .nico{transform:translateY(-2px) scale(1.12)}
+/* ===== teoría ===== */
 .theory h3{color:var(--acc2);font-size:16px;margin:20px 0 8px}
 .theory h4{color:var(--gold);font-size:14px;margin:15px 0 6px}
 .theory p{font-size:14.2px;margin:8px 0}
@@ -94,39 +128,53 @@ h3{font-size:15.5px;margin:0 0 8px}
 .theory .key::before{content:"🎯 Clave de examen";display:block;font-weight:700;color:var(--gold);margin-bottom:5px;font-size:13px}
 .theory .ej{background:var(--okbg);border:1px solid var(--ok);border-radius:12px;padding:12px 15px;margin:12px 0;font-size:13.8px}
 .theory .ej::before{content:"💡 Ejemplo / intuición";display:block;font-weight:700;color:var(--ok);margin-bottom:5px;font-size:13px}
-.theory .warnbox{background:var(--badbg);border:1px solid var(--bad);border-radius:12px;padding:12px 15px;margin:12px 0;font-size:13.8px}
+.theory .warnbox{background:var(--badbg2);border:1px solid var(--bad);border-radius:12px;padding:12px 15px;margin:12px 0;font-size:13.8px}
 .theory .warnbox::before{content:"⚠️ Error típico";display:block;font-weight:700;color:var(--bad);margin-bottom:5px;font-size:13px}
 .theory code{background:var(--card2);border-radius:6px;padding:1px 6px;font-size:13px;color:var(--acc2)}
-details.sec{border:1px solid var(--line);border-radius:13px;margin:10px 0;background:var(--card)}
-details.sec>summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:14.5px;list-style:none;display:flex;align-items:center;gap:8px}
-details.sec>summary::-webkit-details-marker{display:none}
-details.sec>summary::after{content:"▾";margin-left:auto;color:var(--muted);transition:.2s}
-details.sec[open]>summary::after{transform:rotate(180deg)}
-details.sec>.inner{padding:2px 16px 16px}
+.theory mark{background:#ffc95c44;color:var(--gold);border-radius:4px;padding:0 2px}
+.toc{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 4px}
+.toc button{background:var(--card2);border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:5px 12px;font-size:12px;cursor:pointer;transition:.15s}
+.toc button:hover{color:var(--acc2);border-color:var(--acc)}
+.search{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:12px 15px;color:var(--txt);font-size:14.5px;outline:none;margin-bottom:12px}
+.search:focus{border-color:var(--acc)}
+.snip{font-size:12.8px;color:var(--muted);margin-top:5px}
+.snip mark{background:#53cdff33;color:var(--acc2);border-radius:3px;padding:0 2px}
 /* ===== flashcards ===== */
-.fcard{perspective:1200px;margin:14px 0;cursor:pointer}
-.fcard .face{background:var(--card2);border:1.5px solid var(--line);border-radius:16px;padding:26px 20px;min-height:170px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px;transition:.15s}
+.fcard{margin:14px 0;cursor:pointer}
+.fcard .face{background:linear-gradient(180deg,var(--card2),#1a2240);border:1.5px solid var(--line2);border-radius:18px;padding:28px 22px;min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px;animation:fadeUp .2s ease}
 .fcard .face.back{border-color:var(--acc);font-size:14.5px;text-align:left;display:block}
 .srsbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:13px}
+/* ===== confetti ===== */
+.confetti{position:fixed;top:-30px;z-index:90;font-size:18px;pointer-events:none;animation:fall 2.8s ease-in forwards}
+/* ===== números de pregunta (examen) ===== */
+.qnums{display:flex;flex-wrap:wrap;gap:6px}
+.qnums button{width:33px;height:33px;border-radius:9px;border:1px solid var(--line);cursor:pointer;font-size:12px;font-weight:700;transition:.12s}
 @media(max-width:560px){
-  .wrap{padding:14px 12px 92px}
+  .wrap{padding:10px 12px 96px}
   h1{font-size:19px}
   .big{font-size:28px}
   .theory .form{font-size:13.5px}
+  .ring{width:92px;height:92px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="topbar">
+    <span class="logo">🧠 <span class="grtxt">Examen AA</span></span>
+    <div class="spacer"></div>
+    <span class="tpill" id="streakpill">🔥 0</span>
+    <span class="tpill" id="dayspill">📅 —</span>
+  </div>
   <div id="app"></div>
-  <div class="footer">Preparación examen · Aprendizaje Automático (UOC) · 30 preguntas · acierto +1 · fallo −0,5 · blanco 0</div>
+  <div class="footer">Aprendizaje Automático (UOC) · examen 17/06 · acierto +1 · fallo −0,5 · blanco 0</div>
 </div>
 <nav class="nav" id="nav"></nav>
 <div class="toast" id="toast"></div>
 <script>
 "use strict";
 /* ================== CONSTANTES ================== */
-const EXAM_DATE = new Date(2026,5,17); // 17 junio 2026
+const EXAM_DATE = new Date(2026,5,17);
 const MODS = {
   M1:"M1 · Introducción al AA",
   M2:"M2 · Clasificación",
@@ -136,19 +184,14 @@ const MODS = {
   M6:"M6 · Refuerzo"
 };
 const MODS_SHORT = {M1:"M1",M2:"M2",M3:"M3",M4:"M4",M5:"M5",M6:"M6"};
-const MOD_COLORS = {M1:"#7c8cff",M2:"#4cc7ff",M3:"#2bd49e",M4:"#ffc24c",M5:"#ff8cae",M6:"#c08cff"};
+const MOD_COLORS = {M1:"#8b9aff",M2:"#53cdff",M3:"#34dca4",M4:"#ffc95c",M5:"#ff8cae",M6:"#c89bff"};
 
 /* ================== STORAGE ================== */
 const store = {
   get(k,d){ try{ const v = localStorage.getItem("aa2_"+k); return v===null?d:JSON.parse(v);}catch(e){return d;} },
   set(k,v){ try{ localStorage.setItem("aa2_"+k, JSON.stringify(v)); }catch(e){} }
 };
-function qstats(){ return store.get("qstats",{}); }           // {qid:{ok,bad,last}}
-function recordAnswer(qid, ok){
-  const s = qstats(); const e = s[qid]||{ok:0,bad:0};
-  if(ok) e.ok++; else e.bad++;
-  e.last = ok?1:0; s[qid]=e; store.set("qstats",s);
-}
+function qstats(){ return store.get("qstats",{}); }
 function failedIds(){ const s=qstats(); return Object.keys(s).filter(k=>s[k].last===0); }
 function examHistory(){ return store.get("examHist",[]); }
 function pushExam(r){ const h=examHistory(); h.push(r); store.set("examHist",h); }
@@ -158,9 +201,31 @@ function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").rep
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2400); }
 function daysLeft(){ const now=new Date(); now.setHours(0,0,0,0); return Math.max(0,Math.round((EXAM_DATE-now)/86400000)); }
+function todayKey(){ const d=new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
 function app(){ return document.getElementById("app"); }
 function scrollTop(){ window.scrollTo({top:0}); }
+function ring(pct,txt,sub,color){
+  const r=46, c=2*Math.PI*r, off=c*(1-Math.min(1,Math.max(0,pct)));
+  return `<div class="ring"><svg width="100%" height="100%" viewBox="0 0 108 108">
+    <circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--card2)" stroke-width="9"/>
+    <circle cx="54" cy="54" r="${r}" fill="none" stroke="${color||"url(#g1)"}" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}"/>
+    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b9aff"/><stop offset="1" stop-color="#53cdff"/></linearGradient></defs>
+  </svg><div class="rtxt"><b>${txt}</b><span>${sub}</span></div></div>`;
+}
+function confetti(){
+  const E=["🎉","✨","⭐","🎊","💫"];
+  for(let i=0;i<26;i++){
+    const s=document.createElement("span"); s.className="confetti";
+    s.textContent=E[Math.floor(Math.random()*E.length)];
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDelay=(Math.random()*0.7)+"s";
+    s.style.fontSize=(14+Math.random()*14)+"px";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),3600);
+  }
+}
 </script>
+
 <script>
 const THEORY = {};
 /* ============================================================ MÓDULO 1 */
@@ -1012,294 +1077,554 @@ e:"Aprender observando/copiando a un experto es imitación, variante del RL úti
 const QUESTIONS_OLD = [{"m": "M1", "t": "Según la definición de Mitchell (1997), un programa aprende de la experiencia E respecto a una tarea T y una medida de rendimiento P si...", "o": ["su rendimiento en T, medido por P, mejora con la experiencia E", "su código se modifica automáticamente sin intervención humana", "es capaz de almacenar todos los datos de entrenamiento en memoria"], "c": 0, "e": "La definición clásica de Mitchell vincula tres elementos (T, P, E): hay aprendizaje cuando el rendimiento en la tarea, medido por P, mejora al acumular experiencia E. No exige modificar el código ni memorizar los datos."}, {"m": "M1", "t": "¿Cuál de los tres paradigmas se caracteriza porque solo se dispone de una gratificación o penalización según el resultado, sin conocer la salida correcta?", "o": ["Aprendizaje supervisado", "Aprendizaje por refuerzo", "Aprendizaje no supervisado"], "c": 1, "e": "En el aprendizaje por refuerzo el conocimiento sobre la calidad es parcial: el agente recibe recompensas/penalizaciones, no la salida correcta. En el supervisado se conoce la salida; en el no supervisado no hay salida."}, {"m": "M1", "t": "Un problema de aprendizaje supervisado cuyo atributo solución es de tipo numérico continuo es un problema de...", "o": ["clasificación", "regresión", "categorización"], "c": 1, "e": "La regresión corresponde a salida numérica continua; la clasificación a un atributo categórico/binario. La categorización (clustering) es no supervisada."}, {"m": "M1", "t": "La diferencia clave entre selección de características y extracción de características es que...", "o": ["la selección crea atributos nuevos y la extracción elige un subconjunto", "la extracción puede crear atributos nuevos combinando los originales, mientras que la selección solo elige un subconjunto de los existentes", "ambas son idénticas, solo cambia el nombre"], "c": 1, "e": "La selección elige un subconjunto de los atributos originales; la extracción construye un espacio nuevo (posiblemente combinando atributos), como hacen PCA o LDA."}, {"m": "M1", "t": "El Análisis de Componentes Principales (PCA) es una técnica de extracción de características...", "o": ["supervisada, que maximiza la separación entre clases", "no supervisada, que minimiza el error cuadrático de reconstrucción", "supervisada, basada en la ganancia de información"], "c": 1, "e": "PCA es NO supervisado: no usa etiquetas; busca la proyección de menor dimensión que minimiza el error cuadrático de reconstrucción, tomando los vectores propios de mayor valor propio de la matriz de covarianza."}, {"m": "M1", "t": "En PCA, la matriz de proyección se construye con...", "o": ["los vectores propios de mayor valor propio de la matriz de covarianza", "las medias de cada clase", "los puntos más alejados del centroide"], "c": 0, "e": "Tras centrar los datos y calcular la covarianza, PCA toma como matriz de proyección los D vectores propios asociados a los mayores valores propios (las direcciones de máxima varianza)."}, {"m": "M1", "t": "El Análisis Discriminante Lineal (LDA) de Fisher se diferencia de PCA en que LDA...", "o": ["es no supervisado y minimiza el error de reconstrucción", "es supervisado: usa las etiquetas para maximizar la dispersión interclase y minimizar la intraclase", "no reduce la dimensionalidad"], "c": 1, "e": "LDA es supervisado: busca la proyección que maximiza la separación entre clases (dispersión interclase) manteniendo juntos los puntos de la misma clase (dispersión intraclase). PCA ignora las clases."}, {"m": "M1", "t": "En el algoritmo k-means, ¿qué garantiza la versión iterativa básica?", "o": ["Encontrar siempre el mínimo global de la función objetivo", "Convergencia a un mínimo local (la función objetivo no aumenta en cada iteración)", "Que el número de clusters sea óptimo automáticamente"], "c": 1, "e": "k-means solo garantiza convergencia a un mínimo local: en cada iteración reduce (no aumenta) la suma de distancias a los centroides, pero el resultado depende de la inicialización. La k es un hiperparámetro fijado de antemano."}, {"m": "M1", "t": "El número de categorías 'k' en k-means es un ejemplo de...", "o": ["un parámetro que el algoritmo ajusta automáticamente", "un hiperparámetro que se fija manualmente antes de ejecutar el algoritmo", "una métrica de evaluación"], "c": 1, "e": "k es un hiperparámetro: no se ajusta durante el aprendizaje, sino que se decide antes (como el nº máximo de niveles de un árbol). Los parámetros sí se aprenden de los datos."}, {"m": "M1", "t": "¿Por qué es importante que los conjuntos de entrenamiento y de prueba sean disjuntos?", "o": ["Para reducir el coste computacional del entrenamiento", "Para medir la capacidad de generalización con muestras que el modelo no ha visto", "Para que el modelo tenga más datos de entrenamiento"], "c": 1, "e": "El interés es medir generalización: si el test contiene datos vistos en entrenamiento, la medida de calidad queda inflada y deja de ser fiable."}, {"m": "M1", "t": "El conjunto de validación se utiliza para...", "o": ["ajustar los hiperparámetros del modelo sin tocar el conjunto de prueba", "entrenar los parámetros finales del modelo", "sustituir al conjunto de prueba en la evaluación final"], "c": 0, "e": "La validación sirve para ajustar hiperparámetros. No se puede usar el test para ello, porque dejaría de dar una estimación realista de generalización. Tras fijar los hiperparámetros, se reentrena con todos los datos de entrenamiento."}, {"m": "M1", "t": "En una matriz de confusión de clasificación, las filas y columnas representan respectivamente...", "o": ["las predicciones del modelo y los valores reales", "los valores reales de cada clase y las predicciones del modelo", "precisión y sensibilidad"], "c": 1, "e": "Según el material, las filas son los valores reales y las columnas las predicciones del modelo. La celda c(i,j) cuenta ejemplos reales de clase i clasificados como clase j."}, {"m": "M1", "t": "En clasificación binaria, la precisión (precision) se define como...", "o": ["verdaderos positivos / (verdaderos positivos + falsos positivos)", "verdaderos positivos / (verdaderos positivos + falsos negativos)", "aciertos totales / número total de ejemplos"], "c": 0, "e": "Precisión = TP/(TP+FP): de todo lo que el modelo predijo como positivo, qué fracción lo era. La sensibilidad/recall = TP/(TP+FN). La tercera es la exactitud (accuracy)."}, {"m": "M1", "t": "La sensibilidad (recall) de un modelo se define como...", "o": ["el número de positivos correctos dividido por todas las muestras predichas como positivas", "el número de positivos correctos dividido por todas las muestras realmente positivas", "el porcentaje total de aciertos"], "c": 1, "e": "Recall = TP/(TP+FN): de todos los ejemplos realmente positivos, qué fracción detecta el modelo. La primera opción describe la precisión."}, {"m": "M1", "t": "La principal ventaja del RMSE frente al MSE como métrica de regresión es que el RMSE...", "o": ["penaliza más los errores grandes", "tiene las mismas unidades que la variable predicha, siendo más fácil de interpretar", "siempre es menor que el MSE"], "c": 1, "e": "RMSE = raíz del MSE, por lo que recupera las unidades originales (p. ej. euros en vez de euros²), siendo más interpretable. Ambas penalizan el error; la magnitud relativa no es la ventaja destacada."}, {"m": "M1", "t": "En redes neuronales para clasificación, a menudo se minimiza la entropía cruzada en lugar de la tasa de error porque...", "o": ["la entropía cruzada siempre da mejor accuracy", "es derivable, lo que facilita la optimización por descenso de gradientes", "es la única métrica válida para clasificación"], "c": 1, "e": "La función de error que se minimiza no tiene por qué coincidir con la métrica de evaluación. Se usa la entropía cruzada por sus propiedades de derivabilidad, necesarias para el descenso de gradientes."}, {"m": "M1", "t": "El sobreajuste (overfitting) se produce cuando un modelo...", "o": ["no consigue minimizar el error en el conjunto de entrenamiento", "se ajusta muy bien al entrenamiento pero generaliza mal en el conjunto de prueba", "tiene demasiado pocos parámetros"], "c": 1, "e": "Overfitting: error muy bajo en entrenamiento pero mala generalización. El caso opuesto (no minimizar el error de entrenamiento por falta de complejidad) es el underfitting/subajuste."}, {"m": "M1", "t": "¿Qué es el 'sesgo inductivo' de un algoritmo de aprendizaje?", "o": ["El error sistemático en las medidas de los datos", "Todo aquello que restringe el espacio de búsqueda de soluciones (generalizaciones posibles)", "La diferencia entre clases mayoritaria y minoritaria"], "c": 1, "e": "El sesgo inductivo es el conjunto de restricciones que limitan el espacio de hipótesis (p. ej. permitir solo rectas). Permite generalizar, pero puede impedir aprender ciertas soluciones."}, {"m": "M1", "t": "En el compromiso sesgo-varianza, al aumentar la complejidad del modelo...", "o": ["el sesgo aumenta y la varianza disminuye", "el sesgo disminuye y la varianza aumenta", "ambos disminuyen siempre"], "c": 1, "e": "Modelos más complejos se ajustan mejor (menos sesgo) pero son más sensibles a cambios en los datos (más varianza). Entre métodos con igual sesgo, interesa el de menor varianza."}, {"m": "M1", "t": "Se dice que un método de aprendizaje es 'consistente' cuando...", "o": ["al incrementar el tamaño del conjunto de ejemplos, la esperanza del modelo tiende a la función real f", "da exactamente el mismo resultado en cada ejecución", "no tiene sesgo ni varianza"], "c": 0, "e": "Consistencia: al crecer el número de ejemplos, la esperanza del modelo se acerca a f(x). No tener sesgo no implica buena aproximación con pocos datos; por eso importa también la varianza."}, {"m": "M1", "t": "La asunción i.i.d. (independientes e idénticamente distribuidas) sobre las muestras implica que...", "o": ["cada muestra depende de la anterior", "cada muestra es independiente del resto y entrenamiento y prueba siguen la misma distribución", "todas las muestras tienen el mismo valor"], "c": 1, "e": "i.i.d. significa independencia entre muestras e idéntica distribución de probabilidad en entrenamiento y prueba; es la base para que minimizar el error de entrenamiento generalice al test."}, {"m": "M1", "t": "Para representar la información antes de entrenar, los atributos categóricos suelen requerir...", "o": ["transformarse a formato numérico y armonizar los rangos dinámicos", "eliminarse siempre del conjunto de datos", "convertirse en la variable de salida"], "c": 0, "e": "En la fase de representación se transforman los datos a formato numérico, se armonizan rangos y se definen categorías, para que los algoritmos puedan aprender de ellos."}, {"m": "M1", "t": "¿Cuál de estas afirmaciones sobre la selección/extracción de características es correcta según el material?", "o": ["Siempre existe un método universalmente mejor que el resto", "No hay ningún método universalmente mejor; depende de la dimensionalidad, complejidad y naturaleza del problema", "La extracción no lineal está fuera del aprendizaje automático"], "c": 1, "e": "El módulo subraya que no hay un método universalmente superior: la elección depende del problema. PCA y LDA (lineales) son los que se estudian en detalle."}, {"m": "M1", "t": "Una matriz de confusión normalizada por clases es útil sobre todo cuando...", "o": ["todas las clases tienen exactamente el mismo número de ejemplos", "las clases están desbalanceadas y queremos ver el rendimiento por clase independientemente del tamaño", "solo hay dos clases"], "c": 1, "e": "La normalización por clase permite comparar el rendimiento clase a clase sin que el distinto número de ejemplos distorsione la lectura, especialmente útil con clases desbalanceadas."}, {"m": "M2", "t": "El clasificador Naive Bayes asume que...", "o": ["los atributos son condicionalmente independientes dada la clase", "los atributos están fuertemente correlacionados", "no existe ninguna distribución de probabilidad"], "c": 0, "e": "La hipótesis 'naive' (ingenua) es la independencia condicional de los atributos dada la clase, lo que permite factorizar P(x1..xm|k) como producto de P(xi|k). Suele ser irreal pero funciona bien en la práctica."}, {"m": "M2", "t": "Naive Bayes asigna a un nuevo ejemplo la clase que...", "o": ["minimiza la distancia euclidiana a los centroides", "maximiza P(k)·∏ P(xi|k)", "maximiza la entropía del conjunto"], "c": 1, "e": "Por el teorema de Bayes y la hipótesis de independencia, Naive Bayes elige argmax_k P(k)·∏_i P(xi|k), con P(k) y P(xi|k) estimadas por frecuencias relativas (máxima verosimilitud)."}, {"m": "M2", "t": "¿Qué problema resuelve la técnica de suavizado (smoothing) en Naive Bayes?", "o": ["El sobreajuste de los árboles de decisión", "Que una pareja atributo-valor no vista en entrenamiento dé P(xi|k)=0 y anule todo el producto", "La normalización de atributos numéricos"], "c": 1, "e": "Si un valor no apareció en entrenamiento, su probabilidad sería 0 y anularía el producto completo. El suavizado evita los ceros (p. ej. sustituyendo por P(k)/n)."}, {"m": "M2", "t": "Para tratar atributos continuos en Naive Bayes, una opción habitual es...", "o": ["asumir que siguen una distribución gaussiana y aplicar su densidad", "ignorar dichos atributos", "convertirlos en la clase objetivo"], "c": 0, "e": "Con atributos continuos se puede categorizar en intervalos o, más común, asumir distribución gaussiana por clase y usar su función de densidad con la media y desviación de cada clase."}, {"m": "M2", "t": "La regresión logística, a diferencia de Naive Bayes,...", "o": ["asume independencia condicional entre atributos", "no asume independencia entre los datos y modela el logaritmo de la probabilidad (log-odds)", "no puede usarse para clasificación"], "c": 1, "e": "La regresión logística no asume independencia condicional; ajusta una combinación lineal pasada por la sigmoide y modela el log of odds. Pese a su nombre, se usa para clasificación binaria."}, {"m": "M2", "t": "La función logística (sigmoide) σ(x)=1/(1+e^-x) tiene la propiedad de que...", "o": ["devuelve cualquier número real", "restringe la salida al intervalo (0,1), interpretable como probabilidad", "solo devuelve 0 o 1"], "c": 1, "e": "La sigmoide comprime la recta de regresión al intervalo (0,1): para x→+∞ tiende a 1 y para x→−∞ tiende a 0, permitiendo interpretar la salida como probabilidad."}, {"m": "M2", "t": "Una limitación principal de la regresión logística es que...", "o": ["asume linealidad entre la variable dependiente y las independientes (datos pocas veces separables linealmente)", "no puede entrenarse de forma eficiente", "requiere siempre kernels"], "c": 0, "e": "Su principal limitación es la suposición de linealidad: funciona bien con datos separables linealmente, pero en el mundo real esto rara vez ocurre."}, {"m": "M2", "t": "El algoritmo kNN se conoce como 'aprendizaje perezoso' (lazy learning) porque...", "o": ["nunca llega a clasificar correctamente", "pospone toda la generalización hasta el momento de clasificar un nuevo ejemplo (en entrenamiento solo guarda los datos)", "solo funciona con pocos datos"], "c": 1, "e": "kNN no construye un modelo en entrenamiento: simplemente almacena los ejemplos. Todo el cálculo (distancias a los k vecinos) se hace en el momento de la clasificación, de ahí 'perezoso'."}, {"m": "M2", "t": "En kNN se suele escoger un valor de k impar o primo para...", "o": ["acelerar el cálculo de distancias", "minimizar la posibilidad de empates en las votaciones", "poder usar la distancia de Hamming"], "c": 1, "e": "Un k impar/primo reduce los empates en la votación mayoritaria entre clases. La distancia (euclidiana para numéricos, Hamming para nominales) es una decisión independiente."}, {"m": "M2", "t": "La distancia de Hamming es especialmente adecuada para...", "o": ["atributos numéricos continuos", "atributos nominales o binarios (cuenta el número de atributos diferentes)", "reducir la dimensionalidad"], "c": 1, "e": "Hamming cuenta cuántos atributos difieren (0 si iguales, 1 si distintos), ideal para atributos nominales/binarios. La euclidiana se usa mayoritariamente con atributos numéricos."}, {"m": "M2", "t": "El clasificador lineal basado en distancias (centroides) clasifica un nuevo ejemplo...", "o": ["aplicando 1NN sobre los centroides de cada clase (promedio de sus ejemplos)", "construyendo un árbol de decisión", "usando la sigmoide"], "c": 0, "e": "Calcula un centroide por clase (promedio de atributos de sus ejemplos) y clasifica con 1NN respecto a esos centroides. Es eficiente: solo hace tantas comparaciones como clases."}, {"m": "M2", "t": "La técnica de 'clustering dentro de clases' busca un compromiso entre kNN y centroides porque...", "o": ["elimina la necesidad de calcular distancias", "obtiene M representantes (centroides) por clase, reduciendo comparaciones (M×C) sin perder tanta representatividad", "convierte el problema en regresión"], "c": 1, "e": "Aplica un clustering (p. ej. k-means) por clase para obtener M representantes; luego usa kNN sobre M×C centroides. Es más representativo que un único centroide y más eficiente que kNN puro."}, {"m": "M2", "t": "En un árbol de decisión basado en ID3, la 'ganancia de información' se basa en...", "o": ["la distancia euclidiana", "la entropía: penaliza más los conjuntos mezclados", "el margen máximo"], "c": 1, "e": "ID3 usa la ganancia de información, definida a partir de la entropía. La entropía mide el desorden: 0 si una sola clase, máxima (1 en binario) si totalmente mezclado."}, {"m": "M2", "t": "La entropía de un conjunto S es máxima cuando...", "o": ["todos los ejemplos pertenecen a la misma clase", "las clases están totalmente mezcladas (mayor desorden)", "el conjunto está vacío"], "c": 1, "e": "La entropía H(S)=−Σ p(y)log2 p(y) es mínima (0) con una sola clase y máxima cuando las clases están equilibradas/mezcladas. La ganancia de información busca particiones que reduzcan la entropía."}, {"m": "M2", "t": "Para tratar atributos numéricos en árboles de decisión se utiliza...", "o": ["puntos de corte (promedios de valores consecutivos) que generan decisiones binarias", "la distancia de Hamming", "siempre la entropía cruzada"], "c": 0, "e": "Se ordenan los valores y se calculan puntos de corte como promedio de valores consecutivos; se elige el de mejor bondad. Esto genera divisiones binarias, y el atributo numérico puede reutilizarse en niveles posteriores."}, {"m": "M2", "t": "La poda (pruning) de un árbol de decisión tiene como objetivo...", "o": ["aumentar la profundidad del árbol", "evitar el sobreentrenamiento eliminando nodos/hojas que cubren muy pocos ejemplos", "convertir el árbol en una red neuronal"], "c": 1, "e": "La poda combate el overfitting: las hojas con muy pocos ejemplos no dan estimaciones fiables. Lo habitual es construir el árbol completo y luego eliminar nodos superfluos de las hojas hacia la raíz."}, {"m": "M2", "t": "En el truco del kernel (kernel trick), una función kernel κ(x,z) calcula...", "o": ["el producto escalar ⟨φ(x),φ(z)⟩ en un espacio de mayor dimensión sin calcular φ explícitamente", "la distancia de Hamming entre x y z", "la entropía del conjunto"], "c": 0, "e": "El kernel permite trabajar en un espacio proyectado de alta dimensión (donde los datos pueden ser linealmente separables) calculando directamente productos escalares, sin construir φ, con bajo coste extra."}, {"m": "M2", "t": "Una matriz kernel debe ser...", "o": ["antisimétrica", "simétrica y semidefinida positiva (valores propios ≥ 0)", "triangular inferior"], "c": 1, "e": "Las matrices kernel (y sus funciones asociadas) han de ser simétricas y semidefinidas positivas: todos sus valores propios deben ser ≥ 0."}, {"m": "M2", "t": "Las máquinas de vectores de soporte (SVM) escogen el hiperplano que...", "o": ["pasa por el centroide de cada clase", "tiene el margen máximo entre las clases", "minimiza el número de vectores de soporte a uno"], "c": 1, "e": "SVM busca el hiperplano de margen máximo entre positivos y negativos, basándose en la minimización del riesgo estructural. Está definido por los vectores de soporte (los puntos más cercanos al margen)."}, {"m": "M2", "t": "Los vectores de soporte en una SVM son...", "o": ["todos los ejemplos del conjunto de entrenamiento", "los ejemplos más cercanos al hiperplano, que lo definen (αi ≠ 0)", "los ejemplos peor clasificados"], "c": 1, "e": "Solo los puntos sobre el margen (vectores de soporte) tienen αi ≠ 0 y definen el hiperplano; el resto tiene αi = 0. Su número suele ser menor que el total de ejemplos."}, {"m": "M2", "t": "En una SVM de margen flexible (soft margin), el parámetro C controla...", "o": ["el número de clases", "el equilibrio entre maximizar el margen y penalizar los errores de clasificación (variables ξ)", "la profundidad del árbol"], "c": 1, "e": "El margen flexible admite errores a cambio de un mayor margen. El parámetro C equilibra la maximización del margen con la penalización de los errores (variables ξi)."}, {"m": "M2", "t": "Aprender el hiperplano de margen máximo de una SVM es un problema de...", "o": ["optimización cuadrática convexa con una única solución", "categorización no supervisada", "regresión lineal"], "c": 0, "e": "La formulación de la SVM es un problema de optimización cuadrática convexa con solución única, lo que le da buenas propiedades de generalización."}, {"m": "M2", "t": "En una red neuronal, la función de activación más utilizada en las capas ocultas es...", "o": ["la sigmoide", "la ReLU: g(z)=máx(0,z)", "la softmax"], "c": 1, "e": "ReLU (Rectified Linear Unit) g(z)=máx(0,z) es la más usada en entrada y capas ocultas. La sigmoide y la softmax suelen reservarse para la capa de salida (binaria y multiclase respectivamente)."}, {"m": "M2", "t": "En la capa de salida de una red para clasificación multiclase se usa habitualmente...", "o": ["ReLU", "softmax (una unidad por clase, salidas que suman 1)", "activación lineal"], "c": 1, "e": "Softmax produce una salida por clase con valores que suman 1, interpretables como probabilidades. La activación lineal es típica de regresión y la sigmoide de clasificación binaria."}, {"m": "M2", "t": "La técnica de regularización 'dropout' consiste en...", "o": ["detener el entrenamiento cuando el error de validación crece", "desactivar unidades aleatoriamente durante el entrenamiento para evitar el sobreajuste", "aumentar el número de capas"], "c": 1, "e": "Dropout desactiva neuronas al azar durante el entrenamiento, obligando al resto a generalizar y produciendo una red más robusta. La detención temprana (early stopping) es otra técnica distinta."}, {"m": "M2", "t": "La 'detención temprana' (early stopping) detiene el entrenamiento cuando...", "o": ["el error de entrenamiento llega a cero", "el error de validación empieza a crecer aunque el de entrenamiento siga bajando", "se alcanza el número máximo de capas"], "c": 1, "e": "Early stopping detecta el inicio del sobreajuste: cuando el error de validación empieza a subir mientras el de entrenamiento sigue bajando, se detiene el entrenamiento."}, {"m": "M2", "t": "La idea central del aprendizaje profundo (deep learning) es...", "o": ["aumentar mucho la anchura de una única capa oculta", "apilar varias capas ocultas, modelando niveles de abstracción crecientes", "eliminar las funciones de activación"], "c": 1, "e": "El deep learning incrementa el número de capas ocultas (no la anchura de una sola), de modo que cada capa modela un nivel de abstracción superior (bordes → esquinas → objetos). Se considera profunda una red con ~10+ capas."}, {"m": "M2", "t": "En clasificación multiclase con la estrategia 'una contra todas' (one-vs-all), para N clases se generan...", "o": ["N clasificadores binarios", "N·(N−1)/2 clasificadores binarios", "un único clasificador"], "c": 0, "e": "One-vs-all crea N clasificadores binarios (cada clase contra el resto). One-vs-one crea N·(N−1)/2 clasificadores (cada par de clases)."}, {"m": "M2", "t": "La estrategia 'una contra una' (one-vs-one) para N clases requiere...", "o": ["N clasificadores binarios", "N·(N−1)/2 clasificadores binarios", "2N clasificadores binarios"], "c": 1, "e": "One-vs-one entrena un clasificador por cada par de clases: N·(N−1)/2. En general supera en número a one-vs-all (salvo el caso de 3 clases, donde coinciden en 3)."}, {"m": "M2", "t": "La clasificación multietiqueta se diferencia de la multiclase en que...", "o": ["solo admite dos clases", "cada ejemplo puede tener asociadas varias etiquetas a la vez (o ninguna)", "no usa atributos"], "c": 1, "e": "En multietiqueta f(x) devuelve un conjunto de etiquetas (p. ej. [1,0,1] para varias personas en una foto), posiblemente vacío. En multiclase cada ejemplo tiene una única clase entre varias."}, {"m": "M2", "t": "En el dataset de spam (Spambase, PEC2), ¿por qué la normalización (StandardScaler) es importante para SVM o regresión logística pero no para los árboles de decisión?", "o": ["porque los árboles no admiten atributos numéricos", "porque SVM y regresión logística usan distancias/productos escalares sensibles a la escala, mientras que los árboles dividen por umbrales (invariantes a la escala)", "porque la normalización empeora el rendimiento de los árboles"], "c": 1, "e": "SVM y regresión logística dependen de productos escalares/distancias, por lo que atributos con rangos dispares dominarían; necesitan normalización. Los árboles eligen umbrales según entropía/ganancia de información, criterios invariantes a la escala, así que no la requieren (aunque no les perjudica)."}, {"m": "M3", "t": "La función de coste que se minimiza habitualmente en la regresión lineal es...", "o": ["la entropía cruzada", "el error cuadrático medio (MSE)", "la ganancia de información"], "c": 1, "e": "La regresión lineal ajusta los parámetros minimizando el error cuadrático medio entre predicción y valor real. Por convención J(θ)=1/2m·Σ(h(xi)−yi)²."}, {"m": "M3", "t": "En la regresión lineal univariante, la función de coste MSE es...", "o": ["no derivable", "convexa, con un único mínimo absoluto", "cóncava, con múltiples máximos"], "c": 1, "e": "Para la regresión lineal univariante la función de coste MSE es convexa y derivable, con un único mínimo absoluto, lo que permite resolverla con descenso de gradientes sin caer en mínimos locales."}, {"m": "M3", "t": "Una implementación sencilla de regresión kNN predice el valor de salida como...", "o": ["la media del valor y de los k vecinos más próximos", "la clase mayoritaria de los k vecinos", "la mediana de todos los datos"], "c": 0, "e": "En regresión, kNN promedia el valor y de los k vecinos más cercanos (o usa una media ponderada por la inversa de la distancia). En clasificación votaría la clase más frecuente."}, {"m": "M3", "t": "En un árbol de decisión para regresión, el criterio de división busca...", "o": ["minimizar la suma de las varianzas de y en los subconjuntos resultantes", "maximizar la entropía", "maximizar el margen"], "c": 0, "e": "En regresión, la partición que minimiza la suma de varianzas de y (izquierda + derecha) es la mejor; la varianza equivale al MSE de una recta de pendiente 0 que pasa por la media. Las hojas predicen la media de y."}, {"m": "M3", "t": "El Support Vector Regressor (SVR) se diferencia de la SVM de clasificación en que...", "o": ["no admite kernels", "su función de coste ignora los puntos dentro de una banda de anchura ε", "predice clases en lugar de valores"], "c": 1, "e": "SVR usa los mismos principios que SVM pero su función de coste ignora las muestras dentro de la banda ε; solo depende de los vectores de soporte fuera de ella. Admite kernels (lineal, polinómico, RBF)."}, {"m": "M3", "t": "Al usar una red neuronal para regresión, la función de activación de la unidad de salida suele ser...", "o": ["softmax", "lineal (g(z)=z)", "ReLU"], "c": 1, "e": "Para regresión, la salida suele tener activación lineal (un número real). A veces se usa la sigmoide si la salida está acotada. El MSE es la función de coste habitual (aunque no convexa en redes)."}, {"m": "M3", "t": "El objetivo principal de combinar métodos (ensemble learning) es...", "o": ["aumentar el sesgo de los modelos", "reducir el error (sobre todo la varianza) combinando varios modelos", "eliminar la necesidad de datos de entrenamiento"], "c": 1, "e": "Combinar modelos reduce el error asociado a usarlos individualmente, mejorando el compromiso sesgo-varianza (típicamente reduciendo varianza), incluso si todos los modelos usan el mismo algoritmo."}, {"m": "M3", "t": "En la combinación por 'hard voting' (voto mayoritario)...", "o": ["se promedian vectores de probabilidad", "se elige la clase que recibe más votos entre los clasificadores", "se suman los valores numéricos de salida"], "c": 1, "e": "Hard voting / majority voting elige la clase más votada entre los N clasificadores. El soft voting, en cambio, promedia los vectores de probabilidad de cada clasificador."}, {"m": "M3", "t": "En 'soft voting', a diferencia del hard voting...", "o": ["cada clasificador devuelve un vector de probabilidades que se promedian para decidir la clase", "solo se usa con regresión", "no se pueden asignar pesos a los clasificadores"], "c": 0, "e": "Soft voting suma/promedia las probabilidades por clase de cada clasificador y elige el argmax. Permite además ponderar clasificadores según su calidad."}, {"m": "M3", "t": "El bagging (bootstrap aggregating) construye los clasificadores...", "o": ["de manera secuencial, ponderando ejemplos difíciles", "de manera paralela e independiente, sobre subconjuntos muestreados con repetición", "usando un único subconjunto fijo"], "c": 1, "e": "Bagging genera T subconjuntos por muestreo con repetición (bootstrap) y entrena un clasificador en cada uno de forma paralela e independiente. El boosting, en cambio, es secuencial."}, {"m": "M3", "t": "El algoritmo Random Forest es un ejemplo típico de...", "o": ["boosting", "bagging (varios árboles entrenados con subconjuntos bootstrap)", "stacking"], "c": 1, "e": "Random Forest aplica bagging: entrena muchos árboles de decisión sobre subconjuntos bootstrap y agrega sus predicciones (voto o promedio), estimando mejor el valor verdadero."}, {"m": "M3", "t": "El bagging es especialmente recomendable cuando...", "o": ["el conjunto de entrenamiento contiene muestras mal etiquetadas (outliers)", "todos los datos son perfectos", "hay muy pocos atributos"], "c": 0, "e": "Como cada muestra mal etiquetada aparece solo en algunos subconjuntos, afecta a pocos clasificadores y resulta neutra para la mayoría, por lo que el bagging aísla el efecto de los outliers."}, {"m": "M3", "t": "A diferencia del bagging, el boosting (p. ej. AdaBoost) construye los clasificadores...", "o": ["de forma paralela e independiente", "de forma secuencial, asignando más peso a las muestras difíciles de iteraciones anteriores", "sin usar ninguna ponderación"], "c": 1, "e": "Boosting es secuencial: mantiene una distribución de pesos sobre los ejemplos y cada nuevo clasificador débil se centra en los ejemplos mal clasificados (con más peso) por los anteriores."}, {"m": "M3", "t": "En AdaBoost, la predicción final se obtiene como...", "o": ["el promedio simple de todos los clasificadores", "una combinación lineal ponderada de las hipótesis débiles: signo(Σ αt·ht(x))", "la clase del primer clasificador"], "c": 1, "e": "AdaBoost combina las hipótesis débiles ponderadas por αt (que depende del error εt de cada una): f(x)=Σ αt·ht(x), y el signo da la clase. |f(x)| mide la confianza."}, {"m": "M3", "t": "En AdaBoost, ¿qué le ocurre al peso de un ejemplo que ha sido mal clasificado en una iteración?", "o": ["disminuye, para ignorarlo", "aumenta, para que las siguientes reglas se centren en él", "se mantiene constante siempre"], "c": 1, "e": "Los pesos de los ejemplos mal clasificados aumentan exponencialmente, dirigiendo la atención de las siguientes hipótesis débiles hacia los casos más difíciles."}, {"m": "M3", "t": "AdaBoost guarda muchas similitudes con las SVM porque ambos...", "o": ["se basan en la maximización del margen", "usan exclusivamente kernels RBF", "son métodos no supervisados"], "c": 0, "e": "AdaBoost está fundamentado en la maximización del margen, igual que las SVM, lo que le confiere buenas propiedades de generalización y permite acotar el error de generalización."}, {"m": "M3", "t": "Los Random Subspace Methods (RSM) generan diversidad entre clasificadores...", "o": ["muestreando subconjuntos de ejemplos (filas)", "eliminando aleatoriamente atributos (trabajando en subespacios de características)", "ponderando secuencialmente los ejemplos"], "c": 1, "e": "RSM, a diferencia del bagging (que muestrea ejemplos/filas), trabaja en el espacio de los atributos: cada clasificador usa un subconjunto aleatorio de características. Útil en alta dimensionalidad con redundancia."}, {"m": "M3", "t": "En el stacked generalization (stacking), las predicciones de los clasificadores débiles...", "o": ["se descartan", "se concatenan como nuevos atributos (pseudoetiquetas) que alimentan a un metaalgoritmo", "se promedian sin más"], "c": 1, "e": "En stacking, cada clasificador genera una pseudoetiqueta que se apila como atributo adicional; un metaalgoritmo aprende a combinar esas predicciones para mejorar el resultado."}, {"m": "M3", "t": "Según el material, ¿por qué un modelo puede tener mejor RMSE pero peor MAE que otro? (PEC3)", "o": ["porque el RMSE ignora los outliers", "porque el RMSE penaliza mucho más los errores grandes (al elevarlos al cuadrado) que el MAE", "porque el MAE no se puede calcular en regresión"], "c": 1, "e": "El RMSE eleva los errores al cuadrado, penalizando fuertemente los errores grandes; el MAE trata todos los errores por igual. Un modelo muy consistente puede tener mejor RMSE aunque su error medio (MAE) sea algo mayor que el de otro que casi siempre acierta pero comete errores garrafales puntuales."}, {"m": "M3", "t": "En la regresión lineal multivariante, el modelo h(x)=θᵀx se optimiza...", "o": ["también por descenso de gradientes, ya que la función de coste sigue siendo derivable y convexa", "únicamente por fuerza bruta", "con la entropía como criterio"], "c": 0, "e": "Igual que en el caso univariante, la función de coste MSE multivariante es derivable y convexa, por lo que se puede aplicar descenso de gradientes para hallar los θ óptimos."}, {"m": "M3", "t": "Una estrategia para construir clasificadores diferentes en un ensemble usando el MISMO algoritmo es...", "o": ["cambiar el lenguaje de programación", "variar los datos de entrenamiento (distintos subconjuntos de ejemplos o de atributos)", "usar siempre los mismos datos exactos"], "c": 1, "e": "Con el mismo algoritmo se logra diversidad variando los datos: distintos subconjuntos de ejemplos (bagging, boosting) o de atributos (RSM, stacking). Combinar algoritmos distintos es la otra gran estrategia."}, {"m": "M4", "t": "En una red neuronal convolucional (CNN) para clasificar imágenes, las imágenes de entrada deben...", "o": ["tener todas las mismas dimensiones (tamaño uniforme)", "ser todas distintas en tamaño", "estar siempre en blanco y negro"], "c": 0, "e": "Las CNN requieren entradas de tamaño uniforme para realizar las operaciones matemáticas de las capas convolucionales; por eso en el preprocesamiento se redimensionan todas las imágenes a un mismo tamaño."}, {"m": "M4", "t": "En la PEC4, el modelo CNN básico se construye con bloques de...", "o": ["Conv2D + MaxPooling2D, seguidos de una capa densa y una salida softmax", "solo capas densas", "capas recurrentes (LSTM)"], "c": 0, "e": "El modelo secuencial consta de dos bloques Conv2D + MaxPooling2D, una capa densa y una capa de salida con tantas neuronas como clases y activación softmax (3 neuronas para adidas/converse/nike)."}, {"m": "M4", "t": "¿Por qué softmax es adecuada en la capa de salida de una clasificación multiclase?", "o": ["porque devuelve siempre 0 o 1", "porque convierte la salida en un vector de probabilidades que suman 1 (una por clase)", "porque elimina el sobreajuste"], "c": 1, "e": "Softmax produce un vector con una componente por clase cuyos valores suman 1, interpretables como la probabilidad de pertenecer a cada clase; se elige la de mayor probabilidad."}, {"m": "M4", "t": "La técnica de 'aumento de datos' (data augmentation) consiste en...", "o": ["eliminar imágenes del conjunto de entrenamiento", "generar variaciones de las imágenes (giros, recortes, zoom...) para ampliar el conjunto y reducir el sobreajuste", "reducir la resolución de las imágenes"], "c": 1, "e": "El data augmentation crea datos 'falsos' a partir de los disponibles (rotaciones, recortes, ruido, zoom...), ayudando al modelo a generalizar mejor y evitar el overfitting al simular más escenarios."}, {"m": "M4", "t": "El 'Batch Normalization' aplicado tras las capas convolucionales sirve para...", "o": ["estabilizar y acelerar el entrenamiento normalizando las activaciones (media ~0, desviación ~1)", "eliminar capas de la red", "convertir la red en un árbol de decisión"], "c": 0, "e": "Batch Normalization normaliza las activaciones de cada capa, estabilizando y acelerando la convergencia; además introduce algo de ruido que actúa como regularización adicional."}, {"m": "M4", "t": "En la PEC4 se compila el modelo con la función de pérdida 'sparse_categorical_crossentropy'. ¿Para qué tipo de problema es adecuada?", "o": ["regresión con salida continua", "clasificación multiclase con etiquetas enteras", "clustering no supervisado"], "c": 1, "e": "La entropía cruzada categórica es la pérdida estándar para clasificación multiclase; la variante 'sparse' se usa cuando las etiquetas son enteros (0,1,2...) en lugar de vectores one-hot."}, {"m": "M4", "t": "El callback 'EarlyStopping' monitorizando val_loss ayuda a...", "o": ["acelerar la GPU", "evitar el sobreajuste deteniendo el entrenamiento cuando el modelo deja de mejorar en validación", "aumentar el número de clases"], "c": 1, "e": "EarlyStopping interrumpe el entrenamiento cuando la pérdida de validación deja de mejorar durante varias épocas (parámetro patience), evitando que el modelo memorice el entrenamiento y sobreajuste."}, {"m": "M4", "t": "En 'transfer learning' con EfficientNetB0 preentrenado en ImageNet, usar include_top=False significa...", "o": ["eliminar la capa de clasificación original para añadir una cabeza personalizada al nuevo problema", "congelar todas las capas para siempre", "entrenar la red desde cero"], "c": 0, "e": "include_top=False descarta la capa de salida original (de las 1000 clases de ImageNet) y permite añadir una cabeza nueva (p. ej. GlobalAveragePooling + Dropout + softmax) adaptada a las clases del problema actual."}, {"m": "M4", "t": "En la estrategia de transfer learning, ¿qué se hace primero con las capas del modelo base preentrenado?", "o": ["se eliminan todas", "se congelan (no se entrenan) para aprovechar los pesos preentrenados, descongelando solo algunas capas finales", "se reinicializan a valores aleatorios"], "c": 1, "e": "Se congelan las capas base para conservar el conocimiento general aprendido en ImageNet; solo se entrena la cabeza nueva (y opcionalmente se descongelan las últimas capas). El 'fine-tuning' posterior descongela más capas con una tasa de aprendizaje baja."}, {"m": "M4", "t": "En la fase de 'fine-tuning' tras descongelar las capas del modelo base, se recomienda...", "o": ["usar una tasa de aprendizaje baja (p. ej. 0.0001) para no destruir los pesos preentrenados", "usar una tasa de aprendizaje muy alta", "eliminar la función de pérdida"], "c": 0, "e": "Al descongelar capas preentrenadas se usa una tasa de aprendizaje pequeña para ajustarlas suavemente sin destruir el conocimiento útil ya aprendido."}, {"m": "M4", "t": "En la PEC4, el modelo con transfer learning (≈84% test) superó claramente a la CNN entrenada desde cero (≈64% test). La razón principal es que...", "o": ["la CNN desde cero tenía más capas", "EfficientNetB0 fue preentrenado en un conjunto enorme (ImageNet) y transfiere características visuales generales útiles", "el transfer learning no usa datos de entrenamiento"], "c": 1, "e": "El modelo preentrenado ya ha aprendido representaciones visuales generales (bordes, texturas, formas) sobre millones de imágenes de ImageNet, que se transfieren al nuevo problema con pocas imágenes, mejorando la generalización."}, {"m": "M4", "t": "El optimizador utilizado para entrenar las redes en la PEC4 es...", "o": ["Adam", "k-means", "AdaBoost"], "c": 0, "e": "Adam es el optimizador empleado (con learning_rate=0.001 en el modelo desde cero). Es un método de descenso de gradientes adaptativo muy usado en deep learning. k-means y AdaBoost no son optimizadores de redes."}, {"m": "M4", "t": "Usar dropout del 50% tras la capa densa y kernel_regularizer='l2' en las convoluciones son ejemplos de...", "o": ["técnicas de aumento de datos", "técnicas de regularización para reducir el sobreajuste", "funciones de activación"], "c": 1, "e": "Tanto el dropout (apagar neuronas al azar) como la regularización L2 (penalizar pesos grandes) son técnicas de regularización que ayudan a que la red generalice mejor y no sobreajuste."}, {"m": "M4", "t": "Un modelo 'multimodal' como el planteado en la PEC4...", "o": ["solo procesa imágenes", "combina varias fuentes de datos (p. ej. imágenes + datos tabulares) concatenando sus representaciones antes de las capas finales", "solo procesa texto"], "c": 1, "e": "Un modelo multimodal integra distintos tipos de datos: una rama procesa las imágenes y su salida se concatena con los datos tabulares antes de las capas densas de clasificación. La calidad de los datos tabulares afecta a la predicción."}, {"m": "M4", "t": "En una CNN, una capa de MaxPooling2D tiene como función principal...", "o": ["aumentar la resolución de la imagen", "reducir las dimensiones espaciales (submuestreo), quedándose con los valores máximos de cada región", "aplicar la activación softmax"], "c": 1, "e": "El max pooling reduce el tamaño espacial de los mapas de características quedándose con el valor máximo de cada región, disminuyendo el coste y aportando cierta invariancia a pequeñas traslaciones."}, {"m": "M4", "t": "En la PEC4, un accuracy de test del 33,33% en un problema de 3 clases equilibradas equivaldría a...", "o": ["un modelo excelente", "el rendimiento del azar (1/3)", "un modelo con sobreajuste perfecto"], "c": 1, "e": "Con 3 clases equilibradas, acertar al azar da 1/3 ≈ 33,33%. Un modelo útil debe superar ese umbral; el modelo desde cero logró ~64% y el de transfer learning ~84%."}, {"m": "M5", "t": "La idea básica del filtraje colaborativo es que...", "o": ["se recomienda según las características descritas de los productos", "si dos usuarios comparten intereses, lo que le gusta a uno probablemente le gustará al otro", "se usan reglas explícitas definidas por expertos"], "c": 1, "e": "El filtraje colaborativo se basa solo en las valoraciones de los usuarios: si dos usuarios tienen gustos similares, los ítems valorados por uno se recomiendan al otro. No usa características de los ítems (eso es contenido) ni reglas (eso es conocimiento)."}, {"m": "M5", "t": "En el filtraje colaborativo, una valoración 'implícita' es...", "o": ["una puntuación explícita de 1 a 5 estrellas", "la que se deduce de una acción como adquirir/consumir un ítem, sin puntuación explícita", "una descripción textual del producto"], "c": 1, "e": "Las valoraciones implícitas se infieren del comportamiento (p. ej. comprar o ver un ítem), mientras que las explícitas son puntuaciones directas (escala de estrellas)."}, {"m": "M5", "t": "En el filtraje colaborativo basado en usuarios, la medida de similitud habitual entre usuarios es...", "o": ["el coeficiente de correlación de Pearson", "la entropía", "la ganancia de información"], "c": 0, "e": "Se suele usar el coeficiente de correlación de Pearson porque es independiente de desplazamientos y escalas (corrige que unos usuarios puntúen alto y otros bajo). Vale 1 con tendencias idénticas, −1 con opuestas y ~0 sin relación."}, {"m": "M5", "t": "¿Por qué no se suele usar la distancia euclídea simple para medir similitud entre usuarios?", "o": ["porque no se puede calcular", "porque depende del número de ítems en común: cuantos más, mayor tiende a ser la distancia", "porque siempre da cero"], "c": 1, "e": "La distancia euclídea crece con el número de ítems valorados en común (más términos en el sumatorio), lo cual no es deseable para comparar similitud. Por eso se prefiere Pearson, independiente de escala."}, {"m": "M5", "t": "En el filtraje colaborativo basado en ítems, la medida de similitud más establecida es...", "o": ["la correlación de Pearson", "la similitud coseno (o coseno ajustada)", "la distancia de Hamming"], "c": 1, "e": "En el enfoque basado en ítems la similitud coseno es la métrica estándar. La coseno ajustada resta la media de cada usuario (corrigiendo sesgos de puntuación) y, como Pearson, toma valores entre −1 y 1."}, {"m": "M5", "t": "El filtraje colaborativo basado en ítems se prefiere al basado en usuarios cuando...", "o": ["hay muchos más usuarios que ítems (comparar usuarios sería muy costoso)", "hay muchos más ítems que usuarios", "no hay ninguna valoración"], "c": 0, "e": "En escenarios realistas suele haber millones de usuarios y miles de ítems; comparar todos los usuarios es costoso. El enfoque basado en ítems (más estable y eficiente) calcula similitudes entre ítems."}, {"m": "M5", "t": "El filtraje colaborativo basado en factorización de matrices (p. ej. SVD)...", "o": ["descompone la matriz de valoraciones en factores que representan características latentes de usuarios e ítems", "usa reglas de restricciones explícitas", "no necesita ninguna valoración"], "c": 0, "e": "La factorización (SVD: M=UΣVᵀ) descubre características latentes (a veces interpretables como género de película). Un ítem se recomienda si su vector latente es parecido al del usuario. La matriz de valoraciones es dispersa, y U,V se hallan minimizando el error."}, {"m": "M5", "t": "El problema del 'arranque en frío' (usuarios o ítems nuevos sin valoraciones) afecta especialmente a...", "o": ["el filtraje colaborativo", "los sistemas basados en conocimiento", "los sistemas basados en restricciones"], "c": 0, "e": "El filtraje colaborativo necesita valoraciones previas, por lo que falla con usuarios o ítems nuevos. Los basados en contenido (con características del ítem) o en conocimiento sortean este problema."}, {"m": "M5", "t": "Los sistemas recomendadores basados en contenido...", "o": ["usan solo la matriz de valoraciones", "usan características de los ítems y un perfil de usuario que pondera esas características", "necesitan muchos usuarios para funcionar"], "c": 1, "e": "El enfoque basado en contenido recomienda comparando las características de los ítems con el perfil de preferencias del usuario. Ventaja: no necesita gran volumen de usuarios ni sufre el problema de ítems nuevos sin valoración."}, {"m": "M5", "t": "En recomendadores basados en contenido textual, la función tf-idf da más importancia a...", "o": ["las palabras muy frecuentes en todos los documentos", "las palabras frecuentes en un documento pero poco frecuentes en el conjunto de documentos", "las palabras más cortas"], "c": 1, "e": "tf-idf combina la frecuencia del término en el documento (tf) con la rareza del término en la colección (idf): una palabra relevante aparece mucho en un documento pero poco en los demás."}, {"m": "M5", "t": "Los sistemas recomendadores basados en conocimiento son útiles cuando...", "o": ["hay muchísimas valoraciones disponibles", "se compran productos con poca frecuencia (coches, electrodomésticos) y no hay historial fiable", "se quiere ignorar las preferencias del usuario"], "c": 1, "e": "Para productos comprados raramente (sin historial) o que cambian rápido, el filtraje colaborativo falla. Los basados en conocimiento usan requisitos explícitos del usuario y datos estructurados del producto."}, {"m": "M5", "t": "En un recomendador basado en restricciones, la consulta '[capacidad ≥ 8 AND precio < 400]' es un ejemplo de...", "o": ["consulta conjuntiva (varias condiciones que deben cumplirse a la vez)", "filtraje colaborativo", "factorización de matrices"], "c": 0, "e": "Los recomendadores basados en restricciones formulan consultas conjuntivas (condiciones unidas por AND) sobre el catálogo, recuperando los ítems que cumplen todos los requisitos del usuario."}, {"m": "M5", "t": "En recomendadores basados en casos, la técnica de 'criticar' (critiquing) permite que el usuario...", "o": ["valore con estrellas un producto", "indique cambios sobre un ítem recomendado (p. ej. 'más barato', 'más capacidad') para refinar la búsqueda", "entrene la red neuronal"], "c": 1, "e": "El critiquing apoya la navegación: a partir de un ítem recomendado al que le falta algo, el usuario expresa una crítica (más barato, más grande...) y el sistema busca alternativas que la satisfagan."}, {"m": "M5", "t": "Los sistemas recomendadores híbridos...", "o": ["combinan varios paradigmas (colaborativo, contenido, conocimiento) para aprovechar sus ventajas", "usan un único algoritmo siempre", "no pueden combinar fuentes de información"], "c": 0, "e": "Los híbridos combinan varios enfoques básicos para explotar más fuentes de información y superar las carencias de cada uno. Sus diseños pueden ser monolítico, paralelizado o canalizado (pipeline)."}, {"m": "M5", "t": "Un diseño híbrido 'canalizado' (pipeline) se caracteriza por...", "o": ["combinar las salidas de recomendadores que funcionan en paralelo", "encadenar recomendadores, donde la salida de uno es la entrada del siguiente", "integrar todo en un único algoritmo monolítico"], "c": 1, "e": "En el diseño canalizado los recomendadores se construyen secuencialmente: la salida de una etapa alimenta a la siguiente. El paralelizado combina salidas independientes; el monolítico integra todo en un solo algoritmo."}, {"m": "M5", "t": "La evaluación de sistemas recomendadores basada en datos históricos...", "o": ["pide a usuarios reales que valoren las recomendaciones en tiempo real", "divide las valoraciones en entrenamiento y test, usando métricas de clasificación o de regresión según el caso", "no usa ninguna métrica"], "c": 1, "e": "La evaluación con datos históricos es análoga al aprendizaje supervisado: se reservan valoraciones para test y se usan métricas de clasificación (precisión, recall, exactitud) o de regresión (MSE, RMSE, MAE), o de ranking (MAP, MRR). La basada en usuarios reales evalúa en tiempo real."}, {"m": "M5", "t": "La similitud coseno ajustada se diferencia de la coseno simple en que...", "o": ["resta a cada valoración la media del usuario antes de calcularla (rango −1 a 1)", "solo funciona con datos binarios", "no tiene en cuenta el producto escalar"], "c": 0, "e": "La coseno ajustada normaliza restando la media de valoraciones de cada usuario, corrigiendo que unos puntúen alto y otros bajo. Sus valores van de −1 a 1, como Pearson; la coseno simple va de 0 a 1."}, {"m": "M6", "t": "¿Qué caracteriza al aprendizaje por refuerzo frente al supervisado y no supervisado?", "o": ["dispone de un gran conjunto de datos etiquetados", "no hay datos de entrenamiento: un agente interactúa con un entorno y aprende de las recompensas", "solo busca grupos o clusters en los datos"], "c": 1, "e": "En RL no hay un dataset fijo: el agente aprende por ensayo y error interactuando con el entorno, guiado únicamente por las recompensas que recibe tras cada acción."}, {"m": "M6", "t": "En el bucle del aprendizaje por refuerzo, tras ejecutar una acción at en el estado st, el entorno devuelve...", "o": ["la acción óptima correcta", "un nuevo estado st+1 y una recompensa rt+1", "la política completa"], "c": 1, "e": "El bucle es: el agente ejecuta at en st, y el entorno responde con un nuevo estado st+1 y una recompensa rt+1. Nunca se le da la acción correcta (eso sería supervisado)."}, {"m": "M6", "t": "Cuando el agente solo percibe parte del estado del entorno (p. ej. con sensores), se dice que recibe...", "o": ["una observación (en lugar del estado completo), convirtiendo el problema en un POMDP", "la recompensa acumulada", "la política objetivo"], "c": 0, "e": "Si el agente no percibe el estado completo recibe una observación parcial; el problema deja de ser un MDP totalmente observable y se convierte en un POMDP, frecuente en sistemas robóticos reales."}, {"m": "M6", "t": "El objetivo de cualquier problema de aprendizaje por refuerzo es...", "o": ["minimizar el número de estados", "crear un agente que maximice la recompensa acumulada G", "memorizar todas las trayectorias"], "c": 1, "e": "Todo problema de RL se formula como maximizar la recompensa acumulada G(k)=Σ ri hasta completar la tarea. El agente busca la secuencia de acciones que maximiza esa suma."}, {"m": "M6", "t": "Una recompensa 'dispersa' (sparse) es aquella que...", "o": ["se recibe en cada iteración", "solo se recibe (distinta de cero) al lograr objetivos principales o completar la tarea", "siempre es negativa"], "c": 1, "e": "Las recompensas dispersas solo aparecen al alcanzar objetivos importantes (p. ej. soldar una pieza), a diferencia de las densas, que se reciben en casi cada iteración (p. ej. cada paso sin caer)."}, {"m": "M6", "t": "La política (π) de un agente de RL es...", "o": ["el conjunto de criterios para decidir qué acción ejecutar dado el estado actual", "la lista de todas las recompensas posibles", "el modelo del entorno"], "c": 0, "e": "La política define cómo actúa el agente: dado el estado, qué acción elige. El objetivo del entrenamiento es encontrar la política que maximiza la recompensa acumulada."}, {"m": "M6", "t": "En una política ε-avariciosa (ε-greedy), el parámetro ε regula...", "o": ["la tasa de aprendizaje", "el equilibrio entre exploración (acción aleatoria con probabilidad ε) y explotación (mejor acción con probabilidad 1−ε)", "el factor de descuento"], "c": 1, "e": "La política ε-greedy elige una acción al azar con probabilidad ε (exploración) o la mejor acción conocida con probabilidad 1−ε (explotación). Suele aplicarse una atenuación (decay) que reduce ε con el tiempo."}, {"m": "M6", "t": "La atenuación (decay) de ε durante el entrenamiento busca que el agente...", "o": ["explore mucho al principio y explote más a medida que aprende", "explote siempre desde el inicio", "nunca explore"], "c": 0, "e": "Al inicio interesa explorar (ε alto, próximo a 1) porque el agente no conoce las consecuencias; al avanzar conviene explotar lo aprendido (ε bajo). El decay reduce ε progresivamente."}, {"m": "M6", "t": "Un método de RL es 'sin modelo' (model-free) cuando...", "o": ["conoce perfectamente las transiciones estado-acción del entorno", "aprende solo mediante las interacciones con el entorno, sin una descripción completa de su funcionamiento", "no usa recompensas"], "c": 1, "e": "Los métodos sin modelo aprenden por interacción, sin conocer a priori las transiciones del entorno. Los basados en modelo sí disponen de una descripción completa (transiciones), pero suelen ser inviables salvo en entornos pequeños."}, {"m": "M6", "t": "La diferencia entre métodos 'on-policy' (política actual) y 'off-policy' (política óptima) es que los off-policy...", "o": ["usan una sola política para actuar y aprender", "usan dos políticas: una de comportamiento (para actuar) y una objetivo (que aprende), lo que da más estabilidad", "no aprenden nada"], "c": 1, "e": "Los off-policy mantienen una política de comportamiento (interactúa, se actualiza de vez en cuando) y una política objetivo (aprende constantemente), lo que estabiliza el aprendizaje. Q-learning es off-policy; SARSA es on-policy."}, {"m": "M6", "t": "La tabla Q(s,a) almacena...", "o": ["la recompensa acumulada estimada de tomar la acción a en el estado s", "la probabilidad de cada estado", "el número de episodios ejecutados"], "c": 0, "e": "La tabla Q (valores-acciones) tiene una fila por estado y una columna por acción, y guarda la recompensa acumulada estimada (calidad, quality) de ejecutar la acción a en el estado s. El agente elige argmax_a Q(s,a)."}, {"m": "M6", "t": "El factor de descuento λ (gamma), entre 0 y 1, sirve para...", "o": ["restar peso a las recompensas más lejanas en el tiempo", "aumentar el número de estados", "eliminar la exploración"], "c": 0, "e": "El factor de descuento (λ^t, típicamente 0.95–0.99) hace que las recompensas futuras pesen menos que las inmediatas, facilitando el aprendizaje. Cuanto mayor λ, más se valoran las recompensas lejanas."}, {"m": "M6", "t": "La ecuación de Bellman permite calcular el valor de un estado...", "o": ["recorriendo siempre la trayectoria completa hasta el final", "de forma recursiva, como la recompensa inmediata más el valor descontado del estado siguiente", "sin usar ninguna recompensa"], "c": 1, "e": "Bellman define V(s)=E[rt + γ·V(st+1)]: el valor de un estado en función del valor del siguiente. Esta estrategia (bootstrapping) permite aprender con cada acción, sin recorrer trayectorias enteras como el método de Montecarlo."}, {"m": "M6", "t": "El 'bootstrapping' en el aprendizaje por diferencia temporal (TD) consiste en...", "o": ["esperar al final del episodio para actualizar valores", "estimar el valor de un estado a partir de los valores estimados de los estados sucesores", "muestrear datos con repetición"], "c": 1, "e": "En TD se aplica la idea de Bellman: se actualiza el valor de un estado usando la estimación del estado siguiente, permitiendo aprender en cada acción sin esperar al final de la trayectoria (a diferencia de Montecarlo)."}, {"m": "M6", "t": "La diferencia principal entre SARSA y Q-learning es que...", "o": ["SARSA usa una política (on-policy) y Q-learning usa la acción de valor máximo del estado siguiente (off-policy)", "son exactamente iguales", "Q-learning no usa tabla Q"], "c": 0, "e": "SARSA actualiza con Q(st+1, at+1) siguiendo la política actual (on-policy); Q-learning actualiza con max_a Q(st+1, a) —la mejor acción— y usa dos políticas (off-policy), siendo más eficiente."}, {"m": "M6", "t": "En la actualización de Q-learning, el término 'max_a Q(st+1, a)' refleja que el método...", "o": ["elige la acción siguiente al azar", "asume que en el estado siguiente se tomará la mejor acción posible", "ignora el estado siguiente"], "c": 1, "e": "Q-learning usa el valor de la mejor acción del estado siguiente (max), aprendiendo hacia la política óptima independientemente de la acción que realmente ejecute la política de comportamiento (off-policy)."}, {"m": "M6", "t": "La principal limitación de Q-learning tabular es que...", "o": ["no converge nunca", "la tabla Q crece demasiado cuando el número de estados es grande (memoria y tiempo de entrenamiento)", "solo funciona con recompensas negativas"], "c": 1, "e": "La tabla Q tiene tamaño |S|×|A|; en problemas complejos el número de estados es enorme y la tabla se vuelve inabarcable. La solución es aproximar Q con una función (p. ej. una red neuronal)."}, {"m": "M6", "t": "En las redes Q profundas (DQN), el 'replay buffer' (memoria de experiencia) sirve para...", "o": ["almacenar el modelo del entorno", "extraer ejemplos pasados al azar de modo que sean independientes e idénticamente distribuidos (IID) y estabilizar el descenso de gradientes", "eliminar la exploración"], "c": 1, "e": "Usar las últimas N iteraciones (muy correlacionadas) desestabiliza el entrenamiento. El replay buffer guarda muchas experiencias pasadas y muestrea N al azar, logrando ejemplos más IID y reutilizándolos."}, {"m": "M6", "t": "La segunda gran mejora de DQN, usar una 'red objetivo' que se actualiza solo cada cierto número de iteraciones, resuelve el problema...", "o": ["del objetivo móvil (los parámetros y el valor que se aproxima cambiaban a la vez)", "de la falta de recompensas", "del exceso de estados"], "c": 0, "e": "Si la red ajusta θ para producir yi mientras yi también cambia, hay un 'objetivo móvil' e inestabilidad. La red objetivo mantiene yi fijo durante N iteraciones, estabilizando el aprendizaje."}, {"m": "M6", "t": "En el DQN original para juegos de Atari, ¿por qué la red recibe como entrada las 4 últimas imágenes del juego?", "o": ["para reducir el coste computacional", "porque con una sola imagen no se puede deducir el movimiento (velocidad y dirección de los objetos)", "para aumentar el número de clases"], "c": 1, "e": "Una sola imagen no informa de la dirección/velocidad (p. ej. hacia dónde va la pelota). Apilar las 4 últimas imágenes permite a la red deducir el movimiento. La red tiene capas convolucionales seguidas de capas densas."}, {"m": "M6", "t": "En la PEC6 (navegación de un dron), una política reactiva basada en 'campos de fuerza' (atracción al objetivo + repulsión de obstáculos)...", "o": ["es siempre óptima", "funciona razonablemente pero presenta oscilaciones y no planifica ni se adapta bien, lo que motiva usar RL", "no necesita ningún sensor"], "c": 1, "e": "Las políticas puramente reactivas (campos potenciales) logran comportamientos básicos pero oscilan y no planifican ni generalizan a situaciones nuevas, especialmente con percepción parcial y entornos dinámicos; por eso se recurre al aprendizaje por refuerzo."}];
 const QUESTIONS = QUESTIONS_OLD.concat(QUESTIONS_NEW).map(function(q,i){ q.id = "q"+i; return q; });
 </script>
-
 <script>
+/* ================== POR QUÉ CADA DISTRACTOR ES INCORRECTO ==================
+   Se asocia por el inicio del enunciado. w = {índiceOpciónOriginal: explicación} */
+const WHY_LIST = [
+{t:"Según la definición de Mitchell", w:{
+ 1:"Mitchell no exige que el programa modifique su propio código: el «aprendizaje» es la mejora del rendimiento medido por P, aunque el código sea fijo y solo cambien parámetros.",
+ 2:"Memorizar todos los datos no es aprender: sin generalización el rendimiento en ejemplos nuevos no mejora, que es justo lo que pide la definición."}},
+{t:"¿Cuál de los tres paradigmas se caracteriza porque solo se dispone de una gratificación", w:{
+ 0:"En el supervisado SÍ se conoce la salida correcta de cada ejemplo (etiqueta). La pista es «sin conocer la salida correcta»: eso descarta lo supervisado.",
+ 2:"En el no supervisado no hay NINGUNA señal de calidad, ni siquiera recompensas. Si hay gratificación/penalización, es refuerzo."}},
+{t:"Un problema de aprendizaje supervisado cuyo atributo solución es de tipo numérico continuo", w:{
+ 0:"Clasificación = salida categórica o binaria (clases). Si la salida es un número continuo (precio, temperatura), es regresión.",
+ 2:"«Categorización» en los materiales UOC es sinónimo de clustering: aprendizaje NO supervisado, sin atributo solución."}},
+{t:"La diferencia clave entre selección de características y extracción", w:{
+ 0:"Está al revés: la que CREA atributos nuevos es la extracción; la selección solo ELIGE entre los existentes. Truco: ex-tracción = ex-trae/construye algo nuevo.",
+ 2:"No son idénticas: seleccionar un subconjunto (selección) ≠ proyectar a un espacio nuevo combinando atributos (extracción, como PCA/LDA)."}},
+{t:"El Análisis de Componentes Principales (PCA) es una técnica de extracción", w:{
+ 0:"Maximizar la separación entre clases requiere etiquetas: eso es LDA (supervisado). PCA ignora las clases por completo.",
+ 2:"PCA no usa ganancia de información (eso es de árboles de decisión/ID3) ni es supervisado: trabaja solo con la varianza de los datos."}},
+{t:"En PCA, la matriz de proyección se construye con", w:{
+ 1:"Las medias de cada clase necesitarían etiquetas (supervisado); PCA no las usa. Las medias por clase aparecen en LDA o en el clasificador por centroides.",
+ 2:"Los puntos alejados del centroide son outliers, no direcciones de proyección. PCA busca direcciones (vectores propios), no puntos."}},
+{t:"El Análisis Discriminante Lineal (LDA) de Fisher se diferencia", w:{
+ 0:"Eso describe a PCA, no a LDA. LDA es justo lo contrario: supervisado y orientado a separar clases.",
+ 2:"LDA SÍ reduce la dimensionalidad: proyecta a un espacio de menor dimensión, pero eligiendo la proyección que mejor separa las clases."}},
+{t:"Un modelo acierta 85 de 100 ejemplos de test", w:{
+ 1:"Has intercambiado los términos: 0.85 es la proporción de ACIERTOS (accuracy); el error es lo que queda, 0.15.",
+ 2:"Para la accuracy global basta aciertos/total. La matriz de confusión hace falta para métricas por clase (precision, recall), no para esto."}},
+{t:"Con TP=40, FP=10, FN=20 y TN=30", w:{
+ 1:"Has intercambiado las fórmulas: precisión usa los FP en el denominador, TP/(TP+FP)=40/50=0.8; recall usa los FN, TP/(TP+FN)=40/60≈0.67.",
+ 2:"Revisa los denominadores: P=TP/(TP+FP) y R=TP/(TP+FN). Ni 0.57 ni 0.4 salen de estas fórmulas con esos valores."}},
+{t:"En un detector de tumores malignos", w:{
+ 1:"La precisión penaliza los falsos POSITIVOS (sanos marcados como enfermos). Aquí el error grave es el contrario: un tumor no detectado (falso negativo) → recall.",
+ 2:"La exactitud global puede ser altísima dejando tumores sin detectar si la clase «maligno» es minoritaria. No garantiza pocos falsos negativos."}},
+{t:"¿Cuál es la diferencia entre parámetros e hiperparámetros", w:{
+ 1:"Es al revés: los PARÁMETROS (pesos, β) se aprenden con descenso de gradiente u otros métodos; los hiperparámetros se fijan antes de entrenar.",
+ 2:"No son sinónimos: confundirlos lleva a errores graves como ajustar hiperparámetros con el conjunto de test."}},
+{t:"Si un modelo tiene error de entrenamiento muy bajo pero error de test alto", w:{
+ 1:"El subajuste falla YA en el entrenamiento (modelo demasiado simple). Aquí el entrenamiento va perfecto: el problema es de generalización → sobreajuste.",
+ 2:"La maldición de la dimensionalidad habla del crecimiento exponencial de muestras necesarias con la dimensión, no de esta firma train-bien/test-mal."}},
+{t:"¿Por qué el resultado de k-means puede variar entre ejecuciones", w:{
+ 1:"k es un hiperparámetro que TÚ fijas: no cambia solo. La aleatoriedad está en dónde caen los centroides iniciales.",
+ 2:"k-means es NO supervisado: nunca usa etiquetas de clase, ni aleatoriamente ni de ningún modo."}},
+{t:"En kNN con k=3, los vecinos más cercanos", w:{
+ 1:"Que mande solo el más cercano es el comportamiento de k=1. Con k=3 se vota entre los tres: setosa gana 2-1.",
+ 2:"No hay empate posible: setosa tiene 2 votos y versicolor 1. Los empates se darían con k par y clases igualadas."}},
+{t:"¿Qué algoritmo asume explícitamente la independencia condicional", w:{
+ 1:"La regresión logística NO asume independencia entre atributos: combina pruebas de diferentes fuentes con flexibilidad, justo su ventaja sobre Naive Bayes.",
+ 2:"Las SVM no hacen suposiciones probabilísticas sobre los atributos: buscan el hiperplano de margen máximo (con kernel para no linealidad)."}},
+{t:"En un árbol de decisión, tras particionar por un atributo NOMINAL", w:{
+ 1:"Reutilizarlo no aporta nada: todos los ejemplos de esa rama ya comparten el valor del atributo. Los que SÍ se reutilizan son los numéricos (con nuevos puntos de corte).",
+ 2:"Nada convierte el atributo en numérico: simplemente se descarta en esa rama porque ya no discrimina."}},
+{t:"En una SVM con kernel RBF, un valor de gamma muy alto", w:{
+ 1:"Es lo contrario: gamma PEQUEÑO da fronteras suaves (influencia de cada punto muy extensa). Gamma grande = influencia muy local = frontera pegada a los datos.",
+ 2:"El kernel RBF nunca «se vuelve lineal» por subir gamma; con gamma alto se vuelve más flexible y sobreajustado, no más simple."}},
+{t:"Para un problema de 4 clases con clasificadores binarios, la estrategia una-contra-una", w:{
+ 1:"4 clasificadores sería una-contra-TODAS (OvA): uno por clase contra el resto. OvO necesita uno por PAR de clases: C(C−1)/2 = 6.",
+ 2:"12 sería contar cada par dos veces (ordenado). Los pares no se repiten: 4·3/2 = 6."}},
+{t:"Etiquetar una noticia a la vez como «deportes» y «economía»", w:{
+ 1:"Multiclase permite >2 clases pero solo UNA etiqueta por instancia. Aquí la noticia lleva DOS etiquetas a la vez → multietiqueta.",
+ 2:"No hay nada numérico continuo que predecir: no es regresión, y «multivariante» se refiere a varias variables de entrada."}},
+{t:"Tres clasificadores dan estas probabilidades para las clases (A,B)", w:{
+ 1:"Cuenta los votos: el primero vota A (0.9) y los otros dos votan B (0.6) → hard = B. Soft promedia: A=0.567 > B=0.433 → soft = A. El clasificador muy seguro de A inclina el soft.",
+ 2:"Soft voting NO da B: promedia probabilidades y A gana con 0.567. Esa es justo la gracia del ejemplo: hard y soft pueden discrepar."}},
+{t:"¿Qué técnica de ensemble es especialmente recomendable cuando el conjunto de entrenamiento contiene muestras mal etiquetadas", w:{
+ 1:"El boosting es el PEOR con outliers: al fallar en ellos les sube el peso exponencialmente y acaba obsesionado con el ruido.",
+ 2:"El stacking no aborda los outliers: aprende a combinar salidas de modelos. La dilución de outliers viene del muestreo bootstrap del bagging."}},
+{t:"En AdaBoost, la confianza de cada hipótesis débil", w:{
+ 1:"Si todas pesaran igual sería una votación simple (como bagging). AdaBoost pondera cada regla por su fiabilidad α.",
+ 2:"Error 0.5 = acertar a cara o cruz → α = ½·ln(1) = 0: peso NULO, no máximo. Cuanto menor el error, mayor α."}},
+{t:"La diferencia esencial entre bagging y boosting", w:{
+ 1:"Ambos son «meta-algoritmos»: pueden usar árboles, SVM o cualquier clasificador base. La diferencia es CÓMO generan los conjuntos de entrenamiento.",
+ 2:"Ambos son supervisados (necesitan etiquetas). La diferencia real es paralelo+aleatorio vs. secuencial+adaptativo."}},
+{t:"Entrenamos con 2.000 ejemplos y batch size de 500", w:{
+ 1:"500 es el tamaño del lote, no el número de iteraciones. Iteraciones = ejemplos/batch = 2000/500 = 4.",
+ 2:"2000 sería el número de actualizaciones con SGD puro (batch=1). Con lotes de 500 solo hay 4 actualizaciones por época."}},
+{t:"Una tasa de aprendizaje (η) demasiado alta", w:{
+ 1:"Lento pero seguro es el síntoma de η demasiado BAJA. Con η alta el paso se pasa de largo del mínimo: oscila o diverge.",
+ 2:"η no afecta a la arquitectura: la red tiene los mismos parámetros; lo que cambia es cómo de grandes son los pasos al ajustarlos."}},
+{t:"El early stopping consiste en", w:{
+ 1:"Un número fijo de épocas no mira si el modelo empieza a sobreajustar: puede parar demasiado pronto o tarde. La señal correcta es el error de VALIDACIÓN subiendo.",
+ 2:"Desactivar neuronas aleatoriamente es DROPOUT, otra técnica de regularización distinta."}},
+{t:"Una imagen de entrada de 32×32, un filtro 5×5", w:{
+ 1:"32×32 solo se mantendría con padding (p=2 con f=5). Sin padding la salida encoge: (32−5)/1+1 = 28.",
+ 2:"27 sale de olvidar el +1 de la fórmula: (n+2p−f)/s + 1 = 27+1 = 28."}},
+{t:"Una capa de max-pooling 2×2 con stride 2 sobre un volumen de 28×28×6", w:{
+ 1:"El pooling NUNCA cambia el número de canales: opera dentro de cada canal por separado. 6 canales entran, 6 salen.",
+ 2:"7×7 sería dividir entre 4 (dos poolings seguidos). Un solo pooling 2×2 s=2 divide alto y ancho entre 2: 28→14."}},
+{t:"En una CNN típica de clasificación, la mayor parte de los parámetros", w:{
+ 1:"Las convoluciones comparten el mismo filtro pequeño por toda la imagen: poquísimos parámetros (p. ej., 5×5×canales+1 por filtro).",
+ 2:"El pooling no tiene NINGÚN parámetro entrenable: solo toma el máximo (o la media) de cada ventana."}},
+{t:"(PEC) En transfer learning con una red preentrenada", w:{
+ 1:"Reentrenar todo desde cero desaprovecha el preentrenamiento y con pocos datos sobreajusta: justo lo que el transfer learning evita.",
+ 2:"Es al revés: lo que se congela son las convoluciones (características generales) y lo que se reentrena es la salida/clasificador para tus clases."}},
+{t:"En una celda LSTM, la puerta de olvido", w:{
+ 1:"Desactivar neuronas al azar es dropout (regularización), no una puerta de la LSTM.",
+ 2:"La tasa de aprendizaje es un hiperparámetro global del optimizador; las puertas regulan el flujo de información, no el aprendizaje."}},
+{t:"¿Por qué Pearson y no distancia euclídea para comparar usuarios", w:{
+ 1:"Quedar entre 0 y 1 no es el motivo (Pearson va de −1 a 1). El motivo es que centra las valoraciones de cada usuario y no depende del nº de ítems en común.",
+ 2:"Pearson no penaliza por pocas valoraciones; de hecho con un solo ítem en común ni siquiera puede calcularse bien (queda 0)."}},
+{t:"En el filtraje colaborativo basado en ítems, la medida de similitud más establecida", w:{
+ 1:"Pearson es la medida típica entre USUARIOS (filas). Para ítems (columnas) el estándar es la similitud coseno, idealmente ajustada.",
+ 2:"Hamming es para atributos binarios/categóricos (cuenta diferencias), no para vectores de valoraciones numéricas."}},
+{t:"Un usuario recién registrado sin ninguna valoración", w:{
+ 1:"La burbuja de filtros es el problema OPUESTO: usuarios con tanto historial que solo ven contenido afín. Aquí el problema es la ausencia total de datos.",
+ 2:"La oveja gris SÍ tiene valoraciones, pero gustos tan atípicos que no encuentra vecinos similares. El nuevo usuario no tiene ninguna valoración."}},
+{t:"¿Qué familia de recomendadores puede recomendar un ítem recién añadido", w:{
+ 1:"El colaborativo por usuarios necesita que ALGUIEN haya valorado el ítem para que aparezca en los perfiles: con cero valoraciones es invisible.",
+ 2:"El colaborativo por ítems necesita comparar las valoraciones del ítem nuevo con otros: sin valoraciones no hay columna que comparar."}},
+{t:"Para recomendar neveras en una tienda donde cada cliente compra una cada 10 años", w:{
+ 1:"El colaborativo necesita historial denso de valoraciones/compras; con compras cada década no hay datos suficientes ni recientes.",
+ 2:"La factorización de matrices es filtraje colaborativo: sufre el mismo problema de falta de valoraciones."}},
+{t:"Una política ε-avariciosa con ε=0.1", w:{
+ 1:"Elegir siempre la mejor acción sería ε=0: explotación pura, sin exploración. Con ε=0.1 hay un 10 % de exploración aleatoria.",
+ 2:"Lo tienes invertido: ε es la probabilidad de EXPLORAR (aleatoria), no de explotar. 0.1 → 10 % aleatoria, 90 % la mejor."}},
+{t:"¿Qué método actualiza Q usando la acción que el agente REALMENTE ejecuta", w:{
+ 1:"Q-learning usa maxₐQ(s′,a): lo MEJOR posible en el estado siguiente, se haya ejecutado o no. Por eso es off-policy.",
+ 2:"DQN es la versión con red neuronal de Q-learning: también usa el max, no la acción ejecutada."}},
+{t:"La diferencia clave en la fórmula de actualización entre SARSA y Q-learning", w:{
+ 1:"Ambos usan tasa de aprendizaje α en la actualización: V/Q ← V/Q + α·[objetivo − estimación].",
+ 2:"Ambos necesitan recompensas: son la única señal de aprendizaje en RL. La diferencia está en el término del estado siguiente (max vs. acción real)."}},
+{t:"En DQN, la repetición de experiencias", w:{
+ 1:"Repetir el mismo episodio hasta memorizarlo sería sobreajuste puro y mantiene la correlación temporal: lo contrario de lo que busca el replay (muestras aleatorias variadas).",
+ 2:"Copiar la red es la otra técnica de DQN (target network), y no se hace en cada paso sino periódicamente."}},
+{t:"La red objetivo (target network) de DQN", w:{
+ 1:"No es cuestión de capacidad: es una COPIA de la misma red, congelada, solo para calcular el objetivo de forma estable.",
+ 2:"La ε-greedy sigue siendo necesaria para explorar; la target network resuelve otro problema (el objetivo móvil del entrenamiento)."}},
+{t:"Con γ=0.9, una recompensa de 10 que se recibirá dentro de 2 pasos", w:{
+ 1:"10 sin descuento sería γ=1 o recompensa inmediata (t=0). A dos pasos se aplica γ² = 0.81.",
+ 2:"10·0.9 = 9 es el valor a UN paso (t=1). A dos pasos el descuento es γ² → 10·0.81 = 8.1."}},
+{t:"En la regresión lineal, la función de coste J(θ) basada en el MSE", w:{
+ 1:"Los múltiples mínimos locales aparecen en redes neuronales; en regresión LINEAL, J es convexa: un único mínimo global.",
+ 2:"J es continua y derivable en todo el espacio de parámetros: por eso funciona el descenso de gradiente."}},
+{t:"En un SVR, los puntos del conjunto de entrenamiento que caen dentro de la banda", w:{
+ 1:"Es al revés: los vectores de soporte son los puntos FUERA o en el borde de la banda; los de dentro no influyen.",
+ 2:"El coste C penaliza los errores ξ de los puntos FUERA de la banda; dentro de ella el error es 0 por definición."}},
+{t:"(PEC) Para construir un ensemble con bootstrap manual", w:{
+ 1:"Sin reemplazo y a mitad de tamaño es submuestreo simple, no bootstrap. El bootstrap repite ejemplos y mantiene el tamaño original.",
+ 2:"Partir en bloques ordenados ni es aleatorio ni permite repeticiones: rompe la idea del bootstrap (muestras independientes con reemplazo)."}},
+{t:"(PEC) En scikit-learn, ¿por qué se ajusta el escalador", w:{
+ 1:"El test admite cualquier transformación; lo prohibido es CALCULAR los parámetros de la transformación (media, máx/mín) usando el test.",
+ 2:"El objetivo no es la media del test: es que la evaluación simule datos nunca vistos, sin contaminar el entrenamiento con información del test."}},
+{t:"(PEC) La «burbuja de filtros» en plataformas", w:{
+ 1:"No tiene nada que ver con servidores ni tráfico: es un fenómeno informativo causado por la personalización algorítmica.",
+ 2:"Los usuarios nuevos sin recomendaciones son el problema del cold start, distinto de la burbuja (que afecta a usuarios con mucho historial)."}},
+{t:"¿Por qué una tabla Q es inviable para juegos como el Go", w:{
+ 1:"Las acciones del Go (colocar piedra en una intersección) son discretas. El problema es el número astronómico de ESTADOS.",
+ 2:"Las recompensas del Go son justo lo contrario: dispersas (solo al final, ganar/perder). Y ese tampoco es el motivo de la inviabilidad de la tabla."}},
+{t:"En Naive Bayes, con P(poisonous)=3/7 y siendo 2 de los 3", w:{
+ 1:"3/7 es la probabilidad a priori P(poisonous), no la condicional. P(blanco|venenosa) se calcula DENTRO de la clase: 2 de 3.",
+ 2:"2/7 dividiría entre todos los ejemplos; la condicional divide solo entre los de la clase venenosa (3)."}},
+{t:"El conjunto S tiene 4 ejemplos «edible» y 3 «poisonous»", w:{
+ 1:"Un conjunto casi puro tendría entropía cercana a 0, no a 1. 0.985 indica mezcla casi máxima.",
+ 2:"Con una sola clase la entropía sería exactamente 0 (−1·log₂1 = 0)."}},
+{t:"Cinco clasificadores votan: A, A, B, B, B", w:{
+ 1:"El orden de los votos es irrelevante en una votación por mayoría: solo cuenta el recuento final (B: 3, A: 2).",
+ 2:"No hay empate: 3 ≠ 2. Los empates se tratan con heurísticos (clase más frecuente, etc.) solo cuando ocurren."}},
+{t:"¿Qué propiedad permite usar kernels en las SVM", w:{
+ 1:"El margen flexible (C) es independiente del uso de kernels: puedes tener margen flexible con kernel lineal y viceversa.",
+ 2:"La solución de la SVM es ÚNICA (optimización convexa); eso no tiene relación con poder usar kernels."}},
+{t:"Tras entrenar una SVM, observas que casi todos los ejemplos", w:{
+ 1:"Es lo contrario: el óptimo «bueno» se delata con POCOS vectores de soporte y entrenamiento rápido.",
+ 2:"Si fueran perfectamente separables con ese kernel, bastarían unos pocos vectores de soporte para definir el margen."}},
+{t:"Sin función de activación no lineal, una red neuronal de varias capas", w:{
+ 1:"No: componer funciones lineales da otra función lineal, da igual cuántas capas apiles. La capacidad de aproximador universal viene de la no linealidad.",
+ 2:"Entrenarse puede (el gradiente existe); el problema es que solo representaría funciones lineales."}},
+{t:"El optimizador Adam combina las ideas de", w:{
+ 1:"Bagging y boosting son técnicas de ENSEMBLE (combinación de modelos), no de optimización del gradiente.",
+ 2:"Dropout y early stopping son técnicas de REGULARIZACIÓN contra el sobreajuste, no optimizadores."}},
+{t:"La innovación principal de las redes residuales (ResNet)", w:{
+ 1:"Los filtros de varios tamaños en paralelo (y las conv 1×1) son la idea de INCEPTION/GoogLeNet, no de ResNet.",
+ 2:"ResNet sigue siendo una CNN: no elimina convoluciones, les añade atajos (skip connections)."}},
+{t:"La arquitectura VGG se caracteriza por", w:{
+ 1:"VGG es una CNN: su gracia es justamente la uniformidad de sus capas CONVOLUCIONALES 3×3.",
+ 2:"Las conexiones residuales son de ResNet (2015), posterior a VGG (2014)."}},
+{t:"El mecanismo de atención en una arquitectura codificador-decodificador", w:{
+ 1:"La atención no reduce capas: añade conexiones ponderadas entre decodificador y TODAS las posiciones de la entrada.",
+ 2:"Todo se entrena con retropropagación, atención incluida."}},
+{t:"Clasificar el sentimiento (positivo/negativo) de una frase completa", w:{
+ 1:"One-to-many es lo inverso: UNA entrada genera una secuencia (p. ej., imagen → pie de foto). Aquí entran muchas palabras y sale un único valor.",
+ 2:"One-to-one no usa recurrencia (entrada y salida únicas): no aprovecharía la secuencia de palabras."}},
+{t:"La factorización de matrices descompone la matriz de valoraciones en", w:{
+ 1:"Restar medias es la normalización del coseno ajustado/Pearson, no una factorización.",
+ 2:"Las reglas de asociación son otra técnica (minería de datos, a priori); la factorización aprende matrices de factores latentes."}},
+{t:"En la predicción por ítems pred(a,i)", w:{
+ 1:"Si el usuario no valoró el ítem j, no existe aj con que ponderar: solo sirven ítems similares YA valorados por el usuario.",
+ 2:"Las valoraciones de otros usuarios ya se usaron para calcular las similitudes ítem-ítem; la predicción final pondera las valoraciones DEL PROPIO usuario."}},
+{t:"En el bucle del aprendizaje por refuerzo, tras ejecutar la acción", w:{
+ 1:"Si el entorno diera la acción óptima sería aprendizaje SUPERVISADO. En RL solo hay recompensa y nuevo estado: el agente debe descubrir qué acciones son buenas.",
+ 2:"En RL no existe conjunto de datos etiquetado: la «experiencia» se genera interactuando."}},
+{t:"¿Por qué conocer solo V(s) no basta para decidir la acción", w:{
+ 1:"V(s) se define igualmente en entornos estocásticos (como esperanza). El problema es otro: sin modelo no sabes qué acción te lleva al estado bueno.",
+ 2:"La ecuación de Bellman calcula V perfectamente; lo que falta es el vínculo estado→acción, que es lo que aporta Q(s,a)."}},
+{t:"En la actualización TD V(s) ← V(s) + α·[r + γV(s′) − V(s)]", w:{
+ 1:"La recompensa acumulada total del episodio es lo que usa Montecarlo (esperar al final). TD usa solo la recompensa inmediata + estimación del siguiente estado.",
+ 2:"Las probabilidades de transición pertenecen a los métodos CON modelo; TD es model-free y no las estima."}}
+];
+const WHY = {};
+(function(){
+  for(const q of QUESTIONS){
+    for(const e of WHY_LIST){
+      if(q.t.indexOf(e.t)===0 && !(q.c in e.w)){ WHY[q.id]=e.w; break; }
+    }
+  }
+})();
+
+</script>
+<script>
+/* ===================================================================
+   MOTOR v2 — SRS sobre preguntas, sesión diaria, gamificación
+   =================================================================== */
+
+/* ---------- SRS de preguntas ---------- */
+const INT_DAYS = [0,1,2,3,5];          // días por caja (0 = 10 min)
+function qsrs(){ return store.get("qsrs",{}); }
+function srsInterval(box){
+  const cap = Math.max(1, daysLeft()-1); // nunca programar más allá del examen
+  return Math.min(INT_DAYS[box], cap);
+}
+function srsLabel(box, wrong){
+  if(wrong) return "🔁 La verás de nuevo en esta sesión";
+  const d = srsInterval(box);
+  if(d<=0) return "⏳ Volverá en unos minutos";
+  if(d===1) return "📆 Volverá mañana";
+  return "📆 Volverá en "+d+" días";
+}
+function answerSRS(qid, ok){
+  const s = qsrs(); const e = s[qid]||{b:0,lapses:0};
+  if(ok){ e.b = Math.min(INT_DAYS.length-1,(e.b||0)+1); const d=srsInterval(e.b); e.due = Date.now() + (d===0? 10*60*1000 : d*86400000); }
+  else { e.lapses=(e.lapses||0)+1; e.b=0; e.due = Date.now()+10*60*1000; }
+  s[qid]=e; store.set("qsrs",s);
+  return e;
+}
+/* migración desde la v1: siembra el SRS con el historial previo */
+(function(){
+  if(Object.keys(qsrs()).length) return;
+  const st = qstats(); if(!Object.keys(st).length) return;
+  const s={};
+  for(const id in st){ s[id] = st[id].last===0 ? {b:0,due:Date.now(),lapses:st[id].bad||1} : {b:1,due:Date.now(),lapses:st[id].bad||0}; }
+  store.set("qsrs",s);
+})();
+
+/* ---------- gamificación ---------- */
+function daily(){ const d=store.get("daily",{}); return d.date===todayKey()? d : {date:todayKey(),n:0}; }
+function streak(){ return store.get("streak",{last:null,n:0}); }
+function touchStreak(){
+  const s = streak(); const t = todayKey();
+  if(s.last===t) return s;
+  const y = new Date(); y.setDate(y.getDate()-1);
+  const yk = y.getFullYear()+"-"+(y.getMonth()+1)+"-"+y.getDate();
+  s.n = (s.last===yk)? s.n+1 : 1; s.last=t; store.set("streak",s);
+  updateTop(); return s;
+}
+const DAILY_GOAL = 30;
+function recordAnswer(qid, ok, firstTry){
+  const s = qstats(); const e = s[qid]||{ok:0,bad:0};
+  if(ok) e.ok++; else e.bad++;
+  e.last = ok?1:0; s[qid]=e; store.set("qstats",s);
+  const srsState = answerSRS(qid, ok);
+  const d = daily(); d.n++; store.set("daily",d);
+  store.set("xp",(store.get("xp",0)) + (ok? (firstTry?10:5) : 2));
+  touchStreak();
+  return srsState;
+}
+function masteredCount(){ const s=qsrs(); return QUESTIONS.filter(q=>s[q.id]&&s[q.id].b>=3).length; }
+function dueQuestions(){ const s=qsrs(); const now=Date.now(); return QUESTIONS.filter(q=>s[q.id]&&s[q.id].due<=now).sort((a,b)=>s[a.id].due-s[b.id].due); }
+function newQuestions(){ const s=qsrs(); return QUESTIONS.filter(q=>!s[q.id]); }
+
+/* ---------- top bar ---------- */
+function updateTop(){
+  const sp=document.getElementById("streakpill"), dp=document.getElementById("dayspill");
+  if(sp) sp.innerHTML = "🔥 "+streak().n;
+  if(dp){ const d=daysLeft(); dp.innerHTML = d===0?"📅 ¡HOY!":"📅 "+d+" día"+(d===1?"":"s"); }
+}
+
 /* ================== NAVEGACIÓN ================== */
 const TABS = [
   {id:"home", ico:"🏠", lbl:"Inicio"},
-  {id:"theory", ico:"📚", lbl:"Teoría"},
-  {id:"flash", ico:"🃏", lbl:"Tarjetas"},
-  {id:"practice", ico:"✏️", lbl:"Práctica"},
+  {id:"study", ico:"🎯", lbl:"Estudiar"},
   {id:"exam", ico:"⏱️", lbl:"Simulacro"},
-  {id:"stats", ico:"📊", lbl:"Progreso"}
+  {id:"theory", ico:"📖", lbl:"Teoría"},
+  {id:"progress", ico:"📈", lbl:"Progreso"}
 ];
-let currentTab = "home";
-let examTimer = null;
-
+let currentTab="home", examTimer=null;
 function renderNav(){
   document.getElementById("nav").innerHTML = TABS.map(t=>
-    '<button class="'+(currentTab===t.id?"active":"")+'" onclick="go(\''+t.id+'\')"><span class="nico">'+t.ico+'</span>'+t.lbl+'</button>'
-  ).join("");
+    '<button class="'+(currentTab===t.id?"active":"")+'" onclick="go(\''+t.id+'\')"><span class="nico">'+t.ico+'</span>'+t.lbl+'</button>').join("");
 }
 function go(tab){
   if(examTimer && tab!=="exam"){ if(!confirm("Hay un simulacro en curso. ¿Salir y abandonarlo?")) return; stopTimer(); }
-  currentTab = tab; renderNav(); scrollTop();
-  ({home, theory, flash, practice, exam, stats})[tab]();
+  currentTab=tab; renderNav(); scrollTop();
+  ({home, study, exam, theory, progress})[tab]();
 }
 
 /* ================== INICIO ================== */
 function moduleProgress(){
   const s = qstats(); const per = {};
-  for(const m of Object.keys(MODS)) per[m] = {ok:0,bad:0,total:QUESTIONS.filter(q=>q.m===m).length,seen:0};
-  QUESTIONS.forEach(q=>{ const e=s[q.id]; if(e){ per[q.m].seen++; per[q.m].ok+=e.ok; per[q.m].bad+=e.bad; } });
+  for(const m of Object.keys(MODS)) per[m]={ok:0,bad:0,total:QUESTIONS.filter(q=>q.m===m).length};
+  QUESTIONS.forEach(q=>{ const e=s[q.id]; if(e){ per[q.m].ok+=e.ok; per[q.m].bad+=e.bad; } });
   return per;
 }
+function weakModule(){
+  const per=moduleProgress(); let weak=null, acc=2;
+  for(const m in per){ const p=per[m]; const n=p.ok+p.bad; if(n>=5){ const a=p.ok/n; if(a<acc){acc=a;weak=m;} } }
+  return weak?{m:weak,acc:acc}:null;
+}
 function home(){
-  const d = daysLeft();
-  const per = moduleProgress();
-  const hist = examHistory();
-  const lastExam = hist.length ? hist[hist.length-1] : null;
-  const failed = failedIds().length;
-  const due = dueFlash().length;
-  let weak=null, weakAcc=2;
-  for(const m in per){ const p=per[m]; const n=p.ok+p.bad; if(n>=5){ const acc=p.ok/n; if(acc<weakAcc){weakAcc=acc;weak=m;} } }
-  const planDays = ["M1 + M2","M3 + M4","M5 + M6","Simulacro + repaso de fallos","Simulacro + tarjetas pendientes","Repaso final de fallos y claves","¡Examen!"];
-  let plan = "";
-  if(d>0){
-    const start = Math.max(0, planDays.length-1-d);
-    plan = planDays.slice(start, planDays.length-1).map((p,i)=>{
-      const date = new Date(); date.setDate(date.getDate()+i);
-      const lbl = i===0?"Hoy":date.toLocaleDateString("es-ES",{weekday:"short", day:"numeric"});
-      return '<div class="stat"><span class="'+(i===0?"acc-t":"muted")+'">'+lbl+'</span><span>'+p+'</span></div>';
-    }).join("");
-  }
-  app().innerHTML = `
-  <h1>Aprendizaje Automático · UOC</h1>
-  <p class="sub">Tu centro de preparación para el examen</p>
-  <div class="card" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-    <div><div class="big ${d<=2?"bad-t":d<=4?"warn-t":"acc-t"}">${d===0?"HOY":d}</div><div class="muted" style="font-size:13px">${d===0?"es el examen 💪":(d===1?"día para el examen":"días para el examen")}</div></div>
-    <div class="spacer"></div>
-    <div style="font-size:13px" class="muted">
-      <div>📚 ${QUESTIONS.length} preguntas · ${FLASH.length} tarjetas</div>
-      <div>🃏 <b class="${due>0?"warn-t":"ok-t"}">${due}</b> tarjetas pendientes hoy</div>
-      <div>❌ <b class="${failed>0?"bad-t":"ok-t"}">${failed}</b> preguntas falladas por repasar</div>
-      ${lastExam?'<div>⏱️ Último simulacro: <b class="'+(lastExam.nota>=5?"ok-t":"bad-t")+'">'+lastExam.nota.toFixed(2)+'/10</b></div>':""}
+  const d=daysLeft(), dn=daily().n, due=dueQuestions().length, fresh=newQuestions().length,
+        mast=masteredCount(), hist=examHistory(), w=weakModule(), dueF=dueFlash().length;
+  const lastExam = hist.length? hist[hist.length-1] : null;
+  const goalPct = Math.min(1, dn/DAILY_GOAL);
+  app().innerHTML = `<div class="view">
+  <div class="card" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    ${ring(goalPct, dn+"/"+DAILY_GOAL, "hoy")}
+    <div style="flex:1;min-width:170px">
+      <h2 style="margin:0 0 4px">${dn>=DAILY_GOAL?"Objetivo cumplido 🎉":"Objetivo diario"}</h2>
+      <p class="muted" style="font-size:13px;margin:0 0 10px">${due>0? "<b class='warn-t'>"+due+"</b> preguntas por repasar":"Sin repasos pendientes"} · <b class="acc-t">${fresh}</b> nuevas disponibles${dueF?" · <b class='gold-t'>"+dueF+"</b> tarjetas":""}</p>
+      <button class="btn" onclick="startSession()">${due>0?"▶ Repasar ahora":"▶ Sesión de estudio"}</button>
     </div>
   </div>
   <div class="grid2">
-    <button class="mode" onclick="go('theory')"><div class="ico">📚</div><h3>Estudiar teoría</h3><p>Guías completas de los 6 módulos con claves de examen</p></button>
-    <button class="mode" onclick="go('flash')"><div class="ico">🃏</div><h3>Tarjetas (repaso espaciado)</h3><p>${due>0?due+" pendientes hoy":"Memoriza conceptos clave"}</p></button>
-    <button class="mode" onclick="go('practice')"><div class="ico">✏️</div><h3>Practicar preguntas</h3><p>Por módulo, con corrección y explicación inmediata</p></button>
-    <button class="mode" onclick="go('exam')"><div class="ico">⏱️</div><h3>Simulacro de examen</h3><p>30 preguntas · 90 min · +1 / −0,5 / 0, como el real</p></button>
+    <button class="mode" onclick="go('exam')"><div class="ico">⏱️</div><h3>Simulacro real</h3><p>30 preguntas · 90 min · +1/−0,5${lastExam? " · último: <b class='"+(lastExam.nota>=5?"ok-t":"bad-t")+"'>"+lastExam.nota.toFixed(1)+"</b>":""}</p></button>
+    <button class="mode" onclick="flashHome()"><div class="ico">🃏</div><h3>Tarjetas rápidas</h3><p>${dueF>0? dueF+" pendientes hoy":"Repaso de conceptos clave"}</p></button>
   </div>
-  ${weak?'<div class="card"><h3>💡 Recomendación</h3><p class="muted" style="font-size:13.5px;margin:6px 0 10px">Tu módulo más flojo ahora mismo es <b style="color:'+MOD_COLORS[weak]+'">'+MODS[weak]+'</b> ('+Math.round(weakAcc*100)+' % de acierto). Repasa su teoría y practica sus preguntas.</p><div class="row"><button class="btn sm" onclick="theoryMod(\''+weak+'\')">Teoría '+weak+'</button><button class="btn sm ghost" onclick="startPractice(\''+weak+'\')">Practicar '+weak+'</button></div></div>':""}
-  ${d>0?'<div class="card"><h3>🗓️ Plan hasta el examen</h3>'+plan+'<div class="stat"><span class="warn-t">17 jun</span><span><b>Examen (30 preguntas · 90 min)</b></span></div></div>':""}
+  ${w?'<div class="card"><div class="row"><div style="flex:1;min-width:180px"><h3>💡 Punto débil: <span style="color:'+MOD_COLORS[w.m]+'">'+MODS[w.m]+'</span></h3><p class="muted" style="font-size:13px;margin:4px 0 0">'+Math.round(w.acc*100)+' % de acierto. Dale caña antes del examen.</p></div><button class="btn sm" onclick="startQuiz(QUESTIONS.filter(q=>q.m===\''+w.m+'\'),\'Refuerzo '+w.m+'\')">Practicar</button></div></div>':""}
   <div class="card">
-    <h3>Cómo puntúa el examen</h3>
-    <p class="muted" style="font-size:13.5px">Acierto <b class="ok-t">+1</b> · fallo <b class="bad-t">−0,5</b> · en blanco <b>0</b>. <b>Regla de oro:</b> responde si puedes descartar al menos una opción (la esperanza pasa a ser positiva); deja en blanco solo si las tres te suenan igual.</p>
-  </div>`;
+    <div class="mb"><div class="lbl"><span>🏆 Dominadas (3+ aciertos seguidos)</span><span>${mast}/${QUESTIONS.length}</span></div>
+    <div class="mini"><i style="width:${Math.round(100*mast/QUESTIONS.length)}%;background:var(--grad)"></i></div></div>
+    <p class="muted" style="font-size:12.5px;margin:8px 0 0">Meta: llegar al 17 con el máximo de preguntas dominadas. Cada fallo la devuelve al principio — así trabaja la repetición espaciada.</p>
+  </div>
+  <div class="card">
+    <h3>Estrategia del examen</h3>
+    <p class="muted" style="font-size:13.5px;margin:6px 0 0">Acierto <b class="ok-t">+1</b> · fallo <b class="bad-t">−0,5</b> · blanco <b>0</b>. Si descartas UNA opción, responde (esperanza +0,25). Solo deja en blanco si las tres te suenan igual. Aprobado ≈ 15 puntos netos.</p>
+  </div></div>`;
+  updateTop();
 }
 
-/* ================== TEORÍA ================== */
-function theory(){
-  const per = moduleProgress();
-  app().innerHTML = '<h1>📚 Teoría</h1><p class="sub">Guías de estudio basadas en los PDF de la asignatura</p>' +
-  Object.keys(MODS).map(m=>{
+/* ================== ESTUDIAR (hub + sesión) ================== */
+function study(){
+  const due=dueQuestions().length, fresh=newQuestions().length, failed=failedIds().length, dueF=dueFlash().length;
+  const per=moduleProgress();
+  app().innerHTML = `<div class="view">
+  <h1>🎯 Estudiar</h1><p class="sub">El fallo decide qué estudias: lo que falles volverá hasta que lo domines</p>
+  <div class="card" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <div style="flex:1;min-width:170px">
+      <h3 style="margin:0 0 4px">Sesión inteligente</h3>
+      <p class="muted" style="font-size:13px;margin:0">${due} por repasar + nuevas hasta ${SESSION_SIZE} preguntas</p>
+    </div>
+    <button class="btn" onclick="startSession()">▶ Empezar</button>
+  </div>
+  <div class="grid2">
+    <button class="mode" onclick="startQuiz(QUESTIONS.filter(q=>new Set(failedIds()).has(q.id)),'Repaso de fallos')"><div class="ico">🔁</div><h3>Mis fallos ${failed?'('+failed+')':''}</h3><p>${failed?'Las que tienes pendiente vengar':'Nada pendiente 🎉'}</p></button>
+    <button class="mode" onclick="flashHome()"><div class="ico">🃏</div><h3>Tarjetas ${dueF?'('+dueF+')':''}</h3><p>Conceptos clave con repaso espaciado</p></button>
+    <button class="mode" onclick="startQuiz(QUESTIONS.filter(q=>q.p),'Tipo PEC')"><div class="ico">🧪</div><h3>Tipo PEC</h3><p>Preguntas prácticas estilo PEC</p></button>
+    <button class="mode" onclick="startQuiz(QUESTIONS,'Mezcla libre')"><div class="ico">🎲</div><h3>Mezcla libre</h3><p>Aleatorias de todo el banco</p></button>
+  </div>
+  <h2 style="margin-top:16px">Por módulo</h2>
+  <div class="grid">${Object.keys(MODS).map(m=>{
     const p=per[m]; const n=p.ok+p.bad; const acc=n?Math.round(100*p.ok/n):null;
-    return '<button class="mode" style="width:100%;margin-bottom:10px" onclick="theoryMod(\''+m+'\')">'+
-      '<h3 style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</h3><p>'+ (acc!==null? acc+' % de acierto en sus preguntas · ':'') + p.total+' preguntas en el banco</p></button>';
-  }).join("");
-}
-function theoryMod(m){
-  currentTab="theory"; renderNav(); scrollTop();
-  app().innerHTML = '<div class="row"><button class="btn sm ghost" onclick="theory()">← Módulos</button><span class="pill acc">'+MODS[m]+'</span></div>'+
-   '<div class="card theory" style="margin-top:12px">'+THEORY[m]+'</div>'+
-   '<div class="row" style="margin-bottom:20px"><button class="btn" onclick="startPractice(\''+m+'\')">✏️ Practicar este módulo</button><button class="btn ghost" onclick="flashMod(\''+m+'\')">🃏 Sus tarjetas</button></div>';
+    return '<button class="mode" onclick="startQuiz(QUESTIONS.filter(q=>q.m===\''+m+'\'),\''+MODS[m]+'\')"><h3 style="color:'+MOD_COLORS[m]+';font-size:14px">'+MODS_SHORT[m]+'</h3><p>'+p.total+' pregs.'+(acc!==null?' · '+acc+' %':'')+'</p></button>';
+  }).join("")}</div></div>`;
 }
 
-/* ================== FLASHCARDS (SRS) ================== */
-const FBOX_DAYS = [0,1,2,4,7];
-function srs(){ return store.get("srs",{}); }
-function dueFlash(mod){
-  const s = srs(); const now = Date.now();
-  return FLASH.map((f,i)=>({f,i})).filter(x=>{
-    if(mod && x.f.m!==mod) return false;
-    const e = s[x.i];
-    return !e || e.due <= now;
-  });
+const SESSION_SIZE = 16;
+function startSession(){
+  currentTab="study"; renderNav();
+  const due = dueQuestions();
+  const fresh = shuffle(newQuestions());
+  let pool = due.slice(0, SESSION_SIZE);
+  if(pool.length < SESSION_SIZE) pool = pool.concat(fresh.slice(0, SESSION_SIZE - pool.length));
+  if(!pool.length){ pool = shuffle(QUESTIONS).slice(0,SESSION_SIZE); toast("Sin pendientes: ronda de refuerzo aleatoria"); }
+  startQuiz(pool, "Sesión de estudio", true);
 }
-let fQueue=[], fIdx=0, fShown=false;
-function flash(){ flashHome(); }
+
+/* ---------- motor de quiz (sesión y práctica) ---------- */
+let Q={queue:[],idx:0,first:{},ok1:0,seen:new Set(),title:"",isSession:false,answered:false,failedList:[]};
+function startQuiz(pool, title, isSession){
+  currentTab="study"; renderNav();
+  if(!pool.length){ toast("No hay preguntas en esta selección 🎉"); study(); return; }
+  Q={queue:shuffle(pool).slice(0,30),idx:0,first:{},ok1:0,seen:new Set(),title:title||"Práctica",isSession:!!isSession,answered:false,failedList:[]};
+  scrollTop(); renderQ();
+}
+function renderQ(){
+  if(Q.idx>=Q.queue.length) return quizSummary();
+  const q=Q.queue[Q.idx];
+  const order=shuffle(q.o.map((_,i)=>i));
+  const isRetry = Q.first[q.id]!==undefined;
+  Q.answered=false;
+  app().innerHTML = `<div class="view">
+  <div class="qmeta"><button class="btn sm ghost" onclick="quizExit()">✕</button>
+    <span class="pill" style="color:${MOD_COLORS[q.m]}">${MODS_SHORT[q.m]}${q.p?" · PEC":""}</span>
+    ${isRetry?'<span class="pill hot">🔁 reintento</span>':(qsrs()[q.id]?'<span class="pill">repaso</span>':'<span class="pill acc">nueva</span>')}
+    <div class="spacer"></div><span class="pill">${Q.seen.size + 1 > Q.queue.length ? Q.queue.length : Q.seen.size+ (Q.first[q.id]===undefined?1:0)}/${qTotal()}</span></div>
+  <div class="bar"><i style="width:${100*Q.idx/Q.queue.length}%"></i></div>
+  <div class="card">
+    <div class="qtext">${esc(q.t)}</div>
+    ${order.map((oi,k)=>'<button class="opt" id="opt'+oi+'" data-k="'+k+'" onclick="qAnswer('+oi+')"><span style="display:flex;align-items:flex-start"><span class="lt">'+(k+1)+'</span><span>'+esc(q.o[oi])+'</span></span></button>').join("")}
+    <div class="feed" id="feed"></div>
+    <div class="row hide" id="nextrow" style="margin-top:12px">
+      <button class="btn sm ghost" onclick="openTheory('${q.m}')">📖 Teoría ${MODS_SHORT[q.m]}</button>
+      <div class="spacer"></div><button class="btn" id="nextbtn" onclick="qNext()">Continuar →</button>
+    </div>
+  </div>
+  <p class="muted" style="font-size:11.5px;text-align:center">Teclas: 1-3 responder · Enter continuar</p></div>`;
+}
+function qTotal(){ return new Set(Q.queue.map(q=>q.id)).size; }
+function qAnswer(oi){
+  if(Q.answered) return; Q.answered=true;
+  const q=Q.queue[Q.idx]; const ok=oi===q.c;
+  const firstTry = Q.first[q.id]===undefined;
+  if(firstTry){ Q.first[q.id]=ok; if(ok) Q.ok1++; else Q.failedList.push(q); Q.seen.add(q.id); }
+  const srsState = recordAnswer(q.id, ok, firstTry);
+  document.querySelectorAll(".opt").forEach(b=>{ b.disabled=true; if(b.id!=="opt"+q.c && b.id!=="opt"+oi) b.classList.add("dim"); });
+  document.getElementById("opt"+q.c).classList.add("correct");
+  if(!ok) document.getElementById("opt"+oi).classList.add("wrong");
+  const f=document.getElementById("feed");
+  f.className="feed show "+(ok?"good":"bad");
+  let html = '<div class="ttl">'+(ok? '<span style="color:var(--ok)">✓ ¡Correcto!</span>' : '<span style="color:var(--bad)">✗ Incorrecto</span>')+'</div>';
+  html += '<div class="exp"><b>Por qué:</b> '+esc(q.e)+'</div>';
+  if(!ok && WHY[q.id] && WHY[q.id][oi]) html += '<div class="why"><b>Tu respuesta:</b> '+esc(WHY[q.id][oi])+'</div>';
+  if(Q.isSession || true) html += '<span class="srschip">'+srsLabel(srsState.b, !ok)+'</span>';
+  f.innerHTML = html;
+  if(!ok){ const clone=q; Q.queue.splice(Math.min(Q.queue.length, Q.idx+3), 0, clone); }
+  document.getElementById("nextrow").classList.remove("hide");
+  setTimeout(()=>{ const el=document.getElementById("feed"); if(el) el.scrollIntoView({behavior:"smooth",block:"nearest"}); },80);
+}
+function qNext(){ Q.idx++; scrollTop(); renderQ(); }
+function quizExit(){ if(Q.seen.size===0 || confirm("¿Salir de la sesión?")) study(); }
+function quizSummary(){
+  const total=qTotal(); const pct=total?Math.round(100*Q.ok1/total):0;
+  if(pct>=80) confetti();
+  app().innerHTML = `<div class="view"><div class="card" style="text-align:center">
+    <div class="big ${pct>=70?"ok-t":pct>=50?"warn-t":"bad-t"}">${pct} %</div>
+    <p class="muted">${Q.ok1} de ${total} a la primera · ${Q.title}</p>
+    <div class="row" style="justify-content:center">
+      <button class="btn" onclick="startSession()">▶ Otra sesión</button>
+      <button class="btn ghost" onclick="study()">Menú</button>
+    </div></div>
+  ${Q.failedList.length?'<div class="card"><h3>Para consolidar (las has fallado hoy)</h3>'+Q.failedList.map(q=>'<div class="stat"><span style="color:'+MOD_COLORS[q.m]+';flex:none">'+MODS_SHORT[q.m]+'</span><span style="font-size:13px">'+esc(q.t.slice(0,90))+(q.t.length>90?"…":"")+'</span></div>').join("")+'<p class="muted" style="font-size:12.5px;margin:10px 0 0">Ya están programadas: volverán a aparecer hasta que las domines.</p></div>':""}
+  </div>`;
+  updateTop();
+}
+
+/* ================== FLASHCARDS ================== */
+const FBOX_DAYS=[0,1,2,4,7];
+function fsrs(){ return store.get("srs",{}); }
+function dueFlash(mod){
+  const s=fsrs(); const now=Date.now();
+  return FLASH.map((f,i)=>({f,i})).filter(x=>{ if(mod&&x.f.m!==mod) return false; const e=s[x.i]; return !e||e.due<=now; });
+}
+let fQueue=[],fIdx=0,fShown=false;
 function flashHome(){
-  const counts = Object.keys(MODS).map(m=>{
-    const tot=FLASH.filter(f=>f.m===m).length;
-    const due=dueFlash(m).length;
-    return '<button class="mode" onclick="flashMod(\''+m+'\')"><h3 style="color:'+MOD_COLORS[m]+';font-size:14px">'+MODS_SHORT[m]+'</h3><p>'+due+' / '+tot+' pendientes</p></button>';
-  }).join("");
-  const dueAll = dueFlash().length;
-  app().innerHTML = `<h1>🃏 Tarjetas</h1><p class="sub">Repaso espaciado: las que falles volverán antes</p>
-  <div class="card"><div class="row">
+  currentTab="study"; renderNav(); scrollTop();
+  const dueAll=dueFlash().length;
+  app().innerHTML = `<div class="view">
+  <div class="row"><button class="btn sm ghost" onclick="study()">← Estudiar</button><h2 style="margin:0">🃏 Tarjetas</h2></div>
+  <div class="card" style="margin-top:12px"><div class="row">
     <div><div class="big ${dueAll?"warn-t":"ok-t"}">${dueAll}</div><div class="muted" style="font-size:13px">pendientes hoy</div></div>
     <div class="spacer"></div>
-    <button class="btn" ${dueAll?"":"disabled"} onclick="flashStart(null)">Repasar pendientes</button>
+    <button class="btn" ${dueAll?"":"disabled"} onclick="flashStart(null)">Repasar</button>
     <button class="btn ghost" onclick="flashStart(null,true)">Todas</button>
   </div></div>
-  <div class="grid">${counts}</div>`;
+  <div class="grid">${Object.keys(MODS).map(m=>{
+    const tot=FLASH.filter(f=>f.m===m).length, due=dueFlash(m).length;
+    return '<button class="mode" onclick="flashStart(\''+m+'\',false,true)"><h3 style="color:'+MOD_COLORS[m]+';font-size:14px">'+MODS_SHORT[m]+'</h3><p>'+due+' / '+tot+' pendientes</p></button>';
+  }).join("")}</div></div>`;
 }
-function flashMod(m){ currentTab="flash"; renderNav(); flashStart(m,false,true); }
-function flashStart(mod, all, fallbackAll){
-  let q = all ? FLASH.map((f,i)=>({f,i})).filter(x=>!mod||x.f.m===mod) : dueFlash(mod);
-  if(!q.length && fallbackAll) q = FLASH.map((f,i)=>({f,i})).filter(x=>!mod||x.f.m===mod);
+function flashStart(mod,all,fallbackAll){
+  let q = all? FLASH.map((f,i)=>({f,i})).filter(x=>!mod||x.f.m===mod) : dueFlash(mod);
+  if(!q.length&&fallbackAll) q=FLASH.map((f,i)=>({f,i})).filter(x=>!mod||x.f.m===mod);
   if(!q.length){ toast("No hay tarjetas pendientes 🎉"); flashHome(); return; }
-  fQueue = shuffle(q); fIdx=0; fShown=false; renderFlash();
+  fQueue=shuffle(q); fIdx=0; fShown=false; scrollTop(); renderFlash();
 }
 function renderFlash(){
   if(fIdx>=fQueue.length){
-    app().innerHTML = '<div class="card" style="text-align:center"><div class="big ok-t">🎉</div><h2>Sesión completada</h2><p class="muted">Has repasado '+fQueue.length+' tarjetas.</p><div class="row" style="justify-content:center"><button class="btn" onclick="flashHome()">Volver</button></div></div>';
+    confetti();
+    app().innerHTML='<div class="view"><div class="card" style="text-align:center"><div class="big ok-t">🎉</div><h2>Sesión completada</h2><p class="muted">Has repasado '+fQueue.length+' tarjetas.</p><div class="row" style="justify-content:center"><button class="btn" onclick="flashHome()">Volver</button></div></div></div>';
     return;
   }
-  const x = fQueue[fIdx]; const f=x.f;
-  app().innerHTML = `
-  <div class="row"><button class="btn sm ghost" onclick="flashHome()">← Salir</button>
+  const x=fQueue[fIdx]; const f=x.f;
+  app().innerHTML = `<div class="view">
+  <div class="row"><button class="btn sm ghost" onclick="flashHome()">✕</button>
     <span class="pill" style="color:${MOD_COLORS[f.m]}">${MODS[f.m]}</span><div class="spacer"></div>
-    <span class="pill">${fIdx+1} / ${fQueue.length}</span></div>
+    <span class="pill">${fIdx+1}/${fQueue.length}</span></div>
   <div class="bar"><i style="width:${100*fIdx/fQueue.length}%"></i></div>
   <div class="fcard" onclick="fFlip()">
-    ${fShown
-      ? '<div class="face back"><div class="muted" style="font-size:12px;margin-bottom:8px">'+esc(f.q)+'</div>'+esc(f.a)+'</div>'
-      : '<div class="face"><b>'+esc(f.q)+'</b></div>'}
+    ${fShown? '<div class="face back"><div class="muted" style="font-size:12px;margin-bottom:8px">'+esc(f.q)+'</div>'+esc(f.a)+'</div>'
+            : '<div class="face"><b>'+esc(f.q)+'</b></div>'}
   </div>
-  ${fShown
-    ? '<div class="srsbtns"><button class="btn bad" onclick="fGrade(0)">✗ No la sabía</button><button class="btn warn" onclick="fGrade(1)">~ A medias</button><button class="btn ok" onclick="fGrade(2)">✓ La sabía</button></div>'
-    : '<button class="btn" style="width:100%" onclick="fFlip()">Mostrar respuesta</button>'}
-  <p class="muted" style="font-size:12px;text-align:center;margin-top:10px">Toca la tarjeta para girarla</p>`;
+  ${fShown? '<div class="srsbtns"><button class="btn bad" onclick="fGrade(0)">✗ No</button><button class="btn warn" onclick="fGrade(1)">~ A medias</button><button class="btn ok" onclick="fGrade(2)">✓ Sí</button></div>'
+          : '<button class="btn" style="width:100%" onclick="fFlip()">Mostrar respuesta</button>'}
+  <p class="muted" style="font-size:11.5px;text-align:center;margin-top:10px">Toca la tarjeta para girarla · Espacio girar · 1/2/3 valorar</p></div>`;
 }
 function fFlip(){ fShown=!fShown; renderFlash(); }
 function fGrade(g){
-  const x=fQueue[fIdx]; const s=srs(); const e=s[x.i]||{box:0};
+  const x=fQueue[fIdx]; const s=fsrs(); const e=s[x.i]||{box:0};
   if(g===0) e.box=0; else if(g===1) e.box=Math.max(0,Math.min(1,e.box||0)); else e.box=Math.min(FBOX_DAYS.length-1,(e.box||0)+1);
-  const days = FBOX_DAYS[e.box];
-  e.due = Date.now() + (g===0 ? 5*60*1000 : (days*86400000 || 12*3600*1000));
+  const days=Math.min(FBOX_DAYS[e.box], Math.max(1,daysLeft()-1));
+  e.due=Date.now()+(g===0? 5*60*1000 : (days*86400000||12*3600*1000));
   s[x.i]=e; store.set("srs",s);
-  if(g===0){ fQueue.push(x); }
+  if(g===0) fQueue.push(x);
   fIdx++; fShown=false; renderFlash();
 }
 
-/* ================== PRÁCTICA ================== */
-let pQueue=[], pIdx=0, pOk=0, pMode="";
-function practice(){
-  const per = moduleProgress(); const failed = failedIds().length;
-  app().innerHTML = `<h1>✏️ Práctica</h1><p class="sub">Corrección inmediata con explicación detallada</p>
-  <div class="grid2">
-    <button class="mode" onclick="startPractice('ALL')"><div class="ico">🎲</div><h3>Mezcla de todo</h3><p>Preguntas aleatorias de los 6 módulos y PECs</p></button>
-    <button class="mode" onclick="startPractice('FAILED')"><div class="ico">🔁</div><h3>Repaso de fallos ${failed?'('+failed+')':''}</h3><p>${failed?'Vuelve sobre las que fallaste':'No tienes fallos pendientes 🎉'}</p></button>
-    <button class="mode" onclick="startPractice('PEC')"><div class="ico">🧪</div><h3>Tipo PEC</h3><p>Preguntas prácticas al estilo de las PECs</p></button>
-    <button class="mode" onclick="startPractice('NEW')"><div class="ico">✨</div><h3>No vistas</h3><p>Solo preguntas que aún no has respondido</p></button>
-  </div>
-  <h2 style="margin-top:18px">Por módulo</h2>
-  <div class="grid">${Object.keys(MODS).map(m=>{
-    const p=per[m]; const n=p.ok+p.bad; const acc=n?Math.round(100*p.ok/n):null;
-    return '<button class="mode" onclick="startPractice(\''+m+'\')"><h3 style="color:'+MOD_COLORS[m]+';font-size:14px">'+MODS_SHORT[m]+'</h3><p>'+p.total+' pregs.'+(acc!==null?' · '+acc+' %':'')+'</p></button>';
-  }).join("")}</div>`;
-}
-function startPractice(sel){
-  currentTab="practice"; renderNav();
-  let pool;
-  if(sel==="ALL") pool = QUESTIONS;
-  else if(sel==="FAILED"){ const f=new Set(failedIds()); pool = QUESTIONS.filter(q=>f.has(q.id)); }
-  else if(sel==="PEC") pool = QUESTIONS.filter(q=>q.p);
-  else if(sel==="NEW"){ const s=qstats(); pool = QUESTIONS.filter(q=>!s[q.id]); }
-  else pool = QUESTIONS.filter(q=>q.m===sel);
-  if(!pool.length){ toast(sel==="NEW"?"¡Las has visto todas!":"No hay preguntas en esta selección 🎉"); practice(); return; }
-  pQueue = shuffle(pool).slice(0,30); pIdx=0; pOk=0; pMode=sel;
-  scrollTop(); renderPQ();
-}
-function renderPQ(){
-  if(pIdx>=pQueue.length){ return pSummary(); }
-  const q = pQueue[pIdx];
-  const order = shuffle(q.o.map((_,i)=>i));
-  app().innerHTML = `
-  <div class="qmeta"><button class="btn sm ghost" onclick="practice()">← Salir</button>
-    <span class="pill" style="color:${MOD_COLORS[q.m]}">${MODS[q.m]}${q.p?" · PEC":""}</span>
-    <div class="spacer"></div><span class="pill">${pIdx+1} / ${pQueue.length}</span></div>
-  <div class="bar"><i style="width:${100*pIdx/pQueue.length}%"></i></div>
-  <div class="card">
-    <div class="qtext">${esc(q.t)}</div>
-    ${order.map((oi,k)=>'<button class="opt" id="opt'+oi+'" onclick="pAnswer('+oi+')"><span style="display:flex;align-items:flex-start"><span class="lt">'+"ABC"[k]+'</span><span>'+esc(q.o[oi])+'</span></span></button>').join("")}
-    <div class="feed" id="feed"></div>
-    <div class="row hide" id="nextrow" style="margin-top:12px"><div class="spacer"></div><button class="btn" onclick="pNext()">Siguiente →</button></div>
-  </div>`;
-}
-function pAnswer(oi){
-  const q = pQueue[pIdx]; const ok = oi===q.c;
-  recordAnswer(q.id, ok); if(ok) pOk++;
-  document.querySelectorAll(".opt").forEach(b=>b.disabled=true);
-  document.getElementById("opt"+q.c).classList.add("correct");
-  if(!ok) document.getElementById("opt"+oi).classList.add("wrong");
-  const f = document.getElementById("feed");
-  f.className = "feed show "+(ok?"good":"bad");
-  f.innerHTML = (ok?"<b>✓ Correcto.</b> ":"<b>✗ Incorrecto.</b> ")+esc(q.e);
-  document.getElementById("nextrow").classList.remove("hide");
-  setTimeout(()=>{ const el=document.getElementById("feed"); if(el) el.scrollIntoView({behavior:"smooth",block:"center"}); },60);
-}
-function pNext(){ pIdx++; scrollTop(); renderPQ(); }
-function pSummary(){
-  const pct = Math.round(100*pOk/pQueue.length);
-  app().innerHTML = `<div class="card" style="text-align:center">
-    <div class="big ${pct>=70?"ok-t":pct>=50?"warn-t":"bad-t"}">${pct} %</div>
-    <p class="muted">${pOk} de ${pQueue.length} correctas</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn" onclick="startPractice(pMode)">Otra ronda</button>
-      <button class="btn ghost" onclick="practice()">Menú práctica</button>
-    </div></div>`;
-}
-
 /* ================== SIMULACRO ================== */
-let eQs=[], eAns=[], eIdx=0, eEndsAt=0;
+let eQs=[],eAns=[],eIdx=0,eEndsAt=0;
 function exam(){
   if(examTimer){ renderEQ(); return; }
-  const hist = examHistory();
-  app().innerHTML = `<h1>⏱️ Simulacro de examen</h1>
-  <p class="sub">Como el real: 30 preguntas (5 por módulo, PECs incluidas) · 90 minutos · +1 / −0,5 / 0</p>
-  <div class="card">
-    <ul class="muted" style="font-size:13.5px;padding-left:18px;margin:0">
-      <li>Puedes navegar entre preguntas y cambiar tus respuestas.</li>
-      <li>Puedes dejar preguntas en blanco (no restan).</li>
-      <li>La corrección y las explicaciones se muestran al finalizar.</li>
-    </ul>
-  </div>
+  const hist=examHistory();
+  app().innerHTML = `<div class="view"><h1>⏱️ Simulacro de examen</h1>
+  <p class="sub">Como el real: 30 preguntas (5 por módulo) · 90 min · +1 / −0,5 / blanco 0</p>
+  <div class="card"><ul class="muted" style="font-size:13.5px;padding-left:18px;margin:0">
+    <li>Navega y cambia respuestas libremente; el blanco no resta.</li>
+    <li>Corrección con explicaciones al finalizar.</li>
+    <li>Lo que falles entra automáticamente en tu plan de repaso.</li></ul></div>
   <button class="btn" style="width:100%;padding:14px" onclick="startExam()">Comenzar simulacro</button>
-  ${hist.length?'<div class="card" style="margin-top:14px"><h3>Historial</h3>'+hist.slice(-8).reverse().map(h=>'<div class="stat"><span class="muted">'+h.date+'</span><span><b class="'+(h.nota>=5?"ok-t":"bad-t")+'">'+h.nota.toFixed(2)+'/10</b> · '+h.ok+'✓ '+h.bad+'✗ '+h.blank+'–</span></div>').join("")+'</div>':""}`;
+  ${hist.length?'<div class="card" style="margin-top:14px"><h3>Historial</h3>'+hist.slice(-8).reverse().map(h=>'<div class="stat"><span class="muted">'+h.date+'</span><span><b class="'+(h.nota>=5?"ok-t":"bad-t")+'">'+h.nota.toFixed(2)+'/10</b> · '+h.ok+'✓ '+h.bad+'✗ '+h.blank+'–</span></div>').join("")+'</div>':""}</div>`;
 }
 function startExam(){
-  eQs = [];
-  for(const m of Object.keys(MODS)){
-    eQs = eQs.concat(shuffle(QUESTIONS.filter(q=>q.m===m)).slice(0,5));
-  }
-  eQs = shuffle(eQs);
-  eAns = new Array(eQs.length).fill(null);
-  eQs.forEach(q=>{ q._ord = shuffle(q.o.map((_,i)=>i)); });
-  eIdx = 0;
-  eEndsAt = Date.now() + 90*60*1000;
-  examTimer = setInterval(tick, 1000);
+  eQs=[];
+  for(const m of Object.keys(MODS)) eQs=eQs.concat(shuffle(QUESTIONS.filter(q=>q.m===m)).slice(0,5));
+  eQs=shuffle(eQs);
+  eAns=new Array(eQs.length).fill(null);
+  eQs.forEach(q=>{ q._ord=shuffle(q.o.map((_,i)=>i)); });
+  eIdx=0; eEndsAt=Date.now()+90*60*1000;
+  examTimer=setInterval(tick,1000);
   scrollTop(); renderEQ();
 }
 function tick(){
-  const left = eEndsAt - Date.now();
+  const left=eEndsAt-Date.now();
   if(left<=0){ toast("⏰ Tiempo agotado"); finishExam(); return; }
-  const el = document.getElementById("etimer");
-  if(el){
-    const s = Math.floor(left/1000);
-    el.textContent = String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
-    el.classList.toggle("danger", s<600);
-  }
+  const el=document.getElementById("etimer");
+  if(el){ const s=Math.floor(left/1000);
+    el.textContent=String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+    el.classList.toggle("danger",s<600); }
 }
 function stopTimer(){ clearInterval(examTimer); examTimer=null; }
 function renderEQ(){
-  const q = eQs[eIdx];
-  const answered = eAns.filter(a=>a!==null).length;
-  app().innerHTML = `
-  <div class="qmeta">
-    <span class="timer" id="etimer">90:00</span>
-    <span class="pill">${answered}/${eQs.length} resp.</span>
-    <div class="spacer"></div>
-    <span class="pill acc">${eIdx+1} / ${eQs.length}</span>
-  </div>
-  <div class="bar"><i style="width:${100*(eIdx)/eQs.length}%"></i></div>
+  const q=eQs[eIdx]; const answered=eAns.filter(a=>a!==null).length;
+  app().innerHTML = `<div class="view">
+  <div class="qmeta"><span class="timer" id="etimer">90:00</span>
+    <span class="pill">${answered}/${eQs.length}</span><div class="spacer"></div>
+    <span class="pill acc">${eIdx+1} / ${eQs.length}</span></div>
+  <div class="bar"><i style="width:${100*eIdx/eQs.length}%"></i></div>
   <div class="card">
     <div class="muted" style="font-size:12px;margin-bottom:4px">${MODS[q.m]}${q.p?" · estilo PEC":""}</div>
     <div class="qtext">${esc(q.t)}</div>
-    ${q._ord.map((oi,k)=>'<button class="opt'+(eAns[eIdx]===oi?" sel":"")+'" onclick="eSelect('+oi+')"><span style="display:flex;align-items:flex-start"><span class="lt">'+"ABC"[k]+'</span><span>'+esc(q.o[oi])+'</span></span></button>').join("")}
+    ${q._ord.map((oi,k)=>'<button class="opt'+(eAns[eIdx]===oi?" sel":"")+'" onclick="eSelect('+oi+')"><span style="display:flex;align-items:flex-start"><span class="lt">'+(k+1)+'</span><span>'+esc(q.o[oi])+'</span></span></button>').join("")}
     <div class="row" style="margin-top:10px">
       <button class="btn sm ghost" ${eIdx===0?"disabled":""} onclick="eNav(-1)">←</button>
       <button class="btn sm ghost" onclick="eBlank()">${eAns[eIdx]===null?"En blanco →":"Quitar respuesta"}</button>
@@ -1308,85 +1633,163 @@ function renderEQ(){
       <button class="btn sm ${eIdx===eQs.length-1?"":"ghost"}" onclick="confirmFinish()">Finalizar</button>
     </div>
   </div>
-  <div class="card" style="padding:12px">
-    <div style="display:flex;flex-wrap:wrap;gap:6px">${eQs.map((_,i)=>
-      '<button onclick="eGoto('+i+')" style="width:32px;height:32px;border-radius:8px;border:1px solid var(--line);cursor:pointer;font-size:12px;font-weight:600;background:'+(i===eIdx?"var(--acc)":(eAns[i]!==null?"var(--card3)":"var(--card2)"))+';color:'+(i===eIdx?"#fff":(eAns[i]!==null?"var(--acc2)":"var(--muted)"))+'">'+(i+1)+'</button>').join("")}</div>
-  </div>`;
+  <div class="card" style="padding:12px"><div class="qnums">${eQs.map((_,i)=>
+    '<button onclick="eGoto('+i+')" style="background:'+(i===eIdx?"var(--acc)":(eAns[i]!==null?"var(--card3)":"var(--card2)"))+';color:'+(i===eIdx?"#0a1020":(eAns[i]!==null?"var(--acc2)":"var(--muted)"))+'">'+(i+1)+'</button>').join("")}</div></div></div>`;
   tick();
 }
-function eSelect(oi){ eAns[eIdx] = (eAns[eIdx]===oi? null : oi); if(eAns[eIdx]!==null && eIdx<eQs.length-1){ setTimeout(()=>eNav(1),180); } else renderEQ(); }
-function eBlank(){ if(eAns[eIdx]===null && eIdx<eQs.length-1) eNav(1); else { eAns[eIdx]=null; renderEQ(); } }
+function eSelect(oi){ eAns[eIdx]=(eAns[eIdx]===oi?null:oi); if(eAns[eIdx]!==null&&eIdx<eQs.length-1){ setTimeout(()=>eNav(1),200);} else renderEQ(); }
+function eBlank(){ if(eAns[eIdx]===null&&eIdx<eQs.length-1) eNav(1); else { eAns[eIdx]=null; renderEQ(); } }
 function eNav(d){ eIdx=Math.max(0,Math.min(eQs.length-1,eIdx+d)); scrollTop(); renderEQ(); }
 function eGoto(i){ eIdx=i; scrollTop(); renderEQ(); }
 function confirmFinish(){
-  const blank = eAns.filter(a=>a===null).length;
-  if(confirm("Vas a finalizar el simulacro"+(blank?" con "+blank+" pregunta(s) en blanco":"")+". ¿Seguro?")) finishExam();
+  const blank=eAns.filter(a=>a===null).length;
+  if(confirm("Vas a finalizar"+(blank?" con "+blank+" en blanco":"")+". ¿Seguro?")) finishExam();
 }
 function finishExam(){
   stopTimer();
   let ok=0,bad=0,blank=0;
-  eQs.forEach((q,i)=>{
-    if(eAns[i]===null){ blank++; return; }
-    const hit = eAns[i]===q.c;
-    recordAnswer(q.id, hit);
-    if(hit) ok++; else bad++;
-  });
-  const pts = ok - 0.5*bad;
-  const nota = Math.max(0, pts/eQs.length*10);
-  const perMod = {};
-  eQs.forEach((q,i)=>{ perMod[q.m]=perMod[q.m]||{ok:0,n:0}; perMod[q.m].n++; if(eAns[i]===q.c) perMod[q.m].ok++; });
-  pushExam({date:new Date().toLocaleDateString("es-ES",{day:"numeric",month:"short"})+" "+new Date().toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"}), ok,bad,blank, nota});
-  app().innerHTML = `
+  eQs.forEach((q,i)=>{ if(eAns[i]===null){blank++;return;} const hit=eAns[i]===q.c; recordAnswer(q.id,hit,true); if(hit)ok++; else bad++; });
+  const pts=ok-0.5*bad; const nota=Math.max(0,pts/eQs.length*10);
+  if(nota>=5) confetti();
+  const perMod={};
+  eQs.forEach((q,i)=>{ perMod[q.m]=perMod[q.m]||{ok:0,n:0}; perMod[q.m].n++; if(eAns[i]===q.c)perMod[q.m].ok++; });
+  pushExam({date:new Date().toLocaleDateString("es-ES",{day:"numeric",month:"short"})+" "+new Date().toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"}),ok,bad,blank,nota});
+  app().innerHTML = `<div class="view">
   <div class="card" style="text-align:center">
     <div class="big ${nota>=5?"ok-t":"bad-t"}">${nota.toFixed(2)} / 10</div>
     <p class="muted">${pts.toFixed(1)} puntos de ${eQs.length} · <span class="ok-t">${ok} ✓</span> · <span class="bad-t">${bad} ✗</span> · ${blank} en blanco</p>
+    ${bad+blank>0?'<p class="muted" style="font-size:12.5px">Las falladas ya están en tu plan de repaso 🎯</p>':""}
   </div>
   <div class="card"><h3>Por módulo</h3>${Object.keys(MODS).filter(m=>perMod[m]).map(m=>{
     const p=perMod[m]; const pct=Math.round(100*p.ok/p.n);
     return '<div class="mb"><div class="lbl"><span style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</span><span>'+p.ok+'/'+p.n+'</span></div><div class="mini"><i style="width:'+pct+'%;background:'+(pct>=60?"var(--ok)":pct>=40?"var(--warn)":"var(--bad)")+'"></i></div></div>';
   }).join("")}</div>
-  <div class="row" style="margin-bottom:14px"><button class="btn" onclick="reviewExam()">Revisar respuestas</button><button class="btn ghost" onclick="go('exam')">Nuevo simulacro</button><button class="btn ghost" onclick="go('home')">Inicio</button></div>`;
-  scrollTop();
+  <div class="row" style="margin-bottom:14px"><button class="btn" onclick="reviewExam()">Revisar respuestas</button><button class="btn ghost" onclick="go('exam')">Nuevo</button><button class="btn ghost" onclick="go('home')">Inicio</button></div></div>`;
+  scrollTop(); updateTop();
 }
 function reviewExam(){
-  app().innerHTML = '<div class="row"><button class="btn sm ghost" onclick="go(\'exam\')">← Salir</button><h2 style="margin:0">Revisión</h2></div>'+
+  app().innerHTML = '<div class="view"><div class="row"><button class="btn sm ghost" onclick="go(\'exam\')">← Salir</button><h2 style="margin:0">Revisión</h2></div>'+
   eQs.map((q,i)=>{
     const a=eAns[i]; const hit=a===q.c;
+    let fb = a===null? "<b>En blanco (0 pts).</b> " : (hit? "<b>✓ +1.</b> ":"<b>✗ −0,5.</b> ");
+    fb += esc(q.e);
+    if(a!==null&&!hit&&WHY[q.id]&&WHY[q.id][a]) fb += '<div class="why" style="margin-top:8px;padding-top:8px;border-top:1px dashed var(--line2)"><b>Tu respuesta:</b> '+esc(WHY[q.id][a])+'</div>';
     return '<div class="card"><div class="muted" style="font-size:12px">'+(i+1)+' · '+MODS[q.m]+'</div><div class="qtext" style="font-size:14.5px">'+esc(q.t)+'</div>'+
-      q.o.map((o,oi)=>'<div class="opt '+(oi===q.c?"correct":(a===oi?"wrong":""))+'" style="cursor:default;font-size:13.5px">'+esc(o)+'</div>').join("")+
-      '<div class="feed show '+(hit?"good":(a===null?"":"bad"))+'" style="'+(a===null?"background:var(--card2);border:1px solid var(--line)":"")+'">'+(a===null?"<b>En blanco (0 pts).</b> ":(hit?"<b>✓ +1</b> ":"<b>✗ −0,5</b> "))+esc(q.e)+'</div></div>';
-  }).join("");
+      q.o.map((o,oi)=>'<div class="opt '+(oi===q.c?"correct":(a===oi?"wrong":"dim"))+'" style="cursor:default;font-size:13.5px;animation:none">'+esc(o)+'</div>').join("")+
+      '<div class="feed show '+(hit?"good":(a===null?"":"bad"))+'" style="'+(a===null?"background:var(--card2);border:1px solid var(--line);":"")+'">'+fb+'</div></div>';
+  }).join("")+'</div>';
   scrollTop();
 }
 
-/* ================== ESTADÍSTICAS ================== */
-function stats(){
-  const per = moduleProgress(); const hist = examHistory();
-  const s = qstats();
-  const totOk = Object.values(s).reduce((a,e)=>a+e.ok,0);
-  const totBad = Object.values(s).reduce((a,e)=>a+e.bad,0);
-  const seen = QUESTIONS.filter(q=>s[q.id]).length;
-  app().innerHTML = `<h1>📊 Progreso</h1><p class="sub">Detecta tus puntos débiles antes del día 17</p>
-  <div class="card"><div class="row" style="text-align:center">
-    <div style="flex:1"><div class="big">${seen}<span class="muted" style="font-size:16px">/${QUESTIONS.length}</span></div><div class="muted" style="font-size:12px">preguntas vistas</div></div>
-    <div style="flex:1"><div class="big ${totOk+totBad?(totOk/(totOk+totBad)>=0.7?"ok-t":"warn-t"):""}">${totOk+totBad?Math.round(100*totOk/(totOk+totBad)):0} %</div><div class="muted" style="font-size:12px">acierto global</div></div>
-    <div style="flex:1"><div class="big ${failedIds().length?"bad-t":"ok-t"}">${failedIds().length}</div><div class="muted" style="font-size:12px">fallos pendientes</div></div>
-  </div></div>
+/* ================== TEORÍA ================== */
+function stripTags(h){ return h.replace(/<[^>]*>/g," ").replace(/\s+/g," "); }
+function theory(){
+  app().innerHTML = `<div class="view"><h1>📖 Teoría</h1><p class="sub">Para consultas puntuales: busca un concepto o entra al módulo</p>
+  <input class="search" id="tsearch" placeholder="🔍 Buscar concepto (p. ej. «dropout», «Pearson», «entropía»)..." oninput="tSearch(this.value)">
+  <div id="tres"></div>
+  <div id="tmods">${Object.keys(MODS).map(m=>
+    '<button class="mode" style="width:100%;margin-bottom:10px" onclick="openTheory(\''+m+'\')"><h3 style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</h3><p>'+QUESTIONS.filter(q=>q.m===m).length+' preguntas asociadas</p></button>').join("")}</div></div>`;
+}
+function tSearch(v){
+  const res=document.getElementById("tres"), mods=document.getElementById("tmods");
+  v=v.trim().toLowerCase();
+  if(v.length<3){ res.innerHTML=""; mods.style.display=""; return; }
+  mods.style.display="none";
+  let out="";
+  for(const m of Object.keys(MODS)){
+    const txt=stripTags(THEORY[m]); const low=txt.toLowerCase();
+    let pos=low.indexOf(v), hits=0, snips="";
+    while(pos>=0 && hits<2){
+      const s=Math.max(0,pos-55), e=Math.min(txt.length,pos+v.length+75);
+      snips += '<div class="snip">…'+esc(txt.slice(s,pos))+'<mark>'+esc(txt.slice(pos,pos+v.length))+'</mark>'+esc(txt.slice(pos+v.length,e))+'…</div>';
+      hits++; pos=low.indexOf(v,pos+1);
+    }
+    if(hits) out += '<button class="mode" style="width:100%;margin-bottom:10px" onclick="openTheory(\''+m+'\',\''+esc(v).replace(/'/g,"")+'\')"><h3 style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</h3>'+snips+'</button>';
+  }
+  res.innerHTML = out || '<div class="card muted">Sin resultados para «'+esc(v)+'». Prueba con otra palabra.</div>';
+}
+function openTheory(m, hl){
+  currentTab="theory"; renderNav(); scrollTop();
+  let html=THEORY[m]; let i=0; const tocs=[];
+  html = html.replace(/<h3>([\s\S]*?)<\/h3>/g, (mm,txt)=>{ const id="th"+(i++); tocs.push({id,txt:stripTags(txt)}); return '<h3 id="'+id+'">'+txt+'</h3>'; });
+  if(hl && hl.length>=3){
+    try{ const re=new RegExp("(?![^<]*>)("+hl.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); html=html.replace(re,"<mark>$1</mark>"); }catch(e){}
+  }
+  app().innerHTML = `<div class="view">
+  <div class="row"><button class="btn sm ghost" onclick="theory()">← Teoría</button><span class="pill acc">${MODS[m]}</span></div>
+  <div class="toc">${tocs.map(t=>'<button onclick="document.getElementById(\''+t.id+'\').scrollIntoView({behavior:\'smooth\'})">'+esc(t.txt.length>34?t.txt.slice(0,34)+"…":t.txt)+'</button>').join("")}</div>
+  <div class="card theory">${html}</div>
+  <div class="row" style="margin-bottom:20px">
+    <button class="btn" onclick="startQuiz(QUESTIONS.filter(q=>q.m==='${m}'),'${MODS[m]}')">✏️ Practicar ${MODS_SHORT[m]}</button>
+    <button class="btn ghost" onclick="flashStart('${m}',false,true)">🃏 Tarjetas</button>
+  </div></div>`;
+}
+
+/* ================== PROGRESO ================== */
+function progress(){
+  const per=moduleProgress(); const hist=examHistory(); const s=qstats(); const sr=qsrs();
+  const totOk=Object.values(s).reduce((a,e)=>a+e.ok,0);
+  const totBad=Object.values(s).reduce((a,e)=>a+e.bad,0);
+  const mast=masteredCount();
+  const xp=store.get("xp",0);
+  const modMastery = Object.keys(MODS).map(m=>{
+    const qs=QUESTIONS.filter(q=>q.m===m);
+    const sum=qs.reduce((a,q)=>a+((sr[q.id]&&sr[q.id].b)||0),0);
+    return {m, pct: Math.round(100*sum/(qs.length*4))};
+  });
+  app().innerHTML = `<div class="view"><h1>📈 Progreso</h1><p class="sub">Tu mapa hacia el 17 de junio</p>
+  <div class="card" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    ${ring(mast/QUESTIONS.length, Math.round(100*mast/QUESTIONS.length)+"%", "dominado")}
+    <div style="flex:1;min-width:160px">
+      <div class="stat"><span class="muted">🔥 Racha</span><b>${streak().n} día${streak().n===1?"":"s"}</b></div>
+      <div class="stat"><span class="muted">⭐ XP total</span><b>${xp}</b></div>
+      <div class="stat"><span class="muted">🎯 Acierto global</span><b class="${totOk+totBad&&totOk/(totOk+totBad)>=0.7?"ok-t":"warn-t"}">${totOk+totBad?Math.round(100*totOk/(totOk+totBad)):0} %</b></div>
+      <div class="stat"><span class="muted">🔁 Fallos pendientes</span><b class="${failedIds().length?"bad-t":"ok-t"}">${failedIds().length}</b></div>
+    </div>
+  </div>
+  <div class="card"><h3>Dominio por módulo</h3><p class="muted" style="font-size:12px;margin:2px 0 8px">Basado en las cajas de repetición espaciada (no solo aciertos)</p>
+  ${modMastery.map(x=>'<div class="mb"><div class="lbl"><span style="color:'+MOD_COLORS[x.m]+'">'+MODS[x.m]+'</span><span>'+x.pct+' %</span></div><div class="mini"><i style="width:'+x.pct+'%;background:'+MOD_COLORS[x.m]+'"></i></div></div>').join("")}</div>
   <div class="card"><h3>Acierto por módulo</h3>${Object.keys(MODS).map(m=>{
     const p=per[m]; const n=p.ok+p.bad; const pct=n?Math.round(100*p.ok/n):0;
-    return '<div class="mb"><div class="lbl"><span style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</span><span>'+(n? pct+' % ('+n+' resp.)':"sin datos")+'</span></div><div class="mini"><i style="width:'+pct+'%;background:'+(pct>=70?"var(--ok)":pct>=50?"var(--warn)":"var(--bad)")+'"></i></div></div>';
+    return '<div class="mb"><div class="lbl"><span style="color:'+MOD_COLORS[m]+'">'+MODS[m]+'</span><span>'+(n?pct+' % ('+n+')':"sin datos")+'</span></div><div class="mini"><i style="width:'+pct+'%;background:'+(pct>=70?"var(--ok)":pct>=50?"var(--warn)":"var(--bad)")+'"></i></div></div>';
   }).join("")}</div>
-  ${hist.length?'<div class="card"><h3>Simulacros</h3>'+hist.slice(-10).reverse().map(h=>'<div class="stat"><span class="muted">'+h.date+'</span><span><b class="'+(h.nota>=5?"ok-t":"bad-t")+'">'+h.nota.toFixed(2)+'/10</b> · '+h.ok+'✓ '+h.bad+'✗ '+h.blank+'–</span></div>').join("")+'</div>':""}
-  <div class="card"><h3>Mantenimiento</h3>
-    <div class="row"><button class="btn sm warn" onclick="if(confirm('¿Borrar el historial de fallos?')){store.set('qstats',{});toast('Fallos reiniciados');stats();}">Reiniciar fallos</button>
-    <button class="btn sm bad" onclick="if(confirm('¿Borrar TODO el progreso (preguntas, tarjetas y simulacros)?')){localStorage.clear();toast('Progreso borrado');stats();}">Borrar todo</button></div>
-  </div>`;
+  ${hist.length?'<div class="card"><h3>Evolución en simulacros</h3><div style="display:flex;align-items:flex-end;gap:8px;height:90px;padding:6px 0">'+hist.slice(-10).map(h=>'<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:100%;max-width:38px;height:'+Math.max(4,h.nota*8)+'px;background:'+(h.nota>=5?"var(--ok)":"var(--bad)")+';border-radius:6px 6px 0 0;opacity:.9"></div><span style="font-size:10px" class="muted">'+h.nota.toFixed(1)+'</span></div>').join("")+'</div></div>':""}
+  <div class="card"><h3>Mantenimiento</h3><div class="row">
+    <button class="btn sm warn" onclick="if(confirm('¿Reiniciar fallos pendientes?')){const s=qstats();for(const k in s)s[k].last=1;store.set('qstats',s);toast('Fallos reiniciados');progress();}">Reiniciar fallos</button>
+    <button class="btn sm bad" onclick="if(confirm('¿Borrar TODO el progreso?')){localStorage.clear();toast('Progreso borrado');location.reload();}">Borrar todo</button>
+  </div></div></div>`;
+  updateTop();
 }
+
+/* ================== TECLADO ================== */
+document.addEventListener("keydown",function(ev){
+  if(ev.target.tagName==="INPUT") return;
+  const k=ev.key;
+  // quiz / sesión
+  if(document.getElementById("feed")){
+    if(!Q.answered && ["1","2","3"].includes(k)){
+      const btn=document.querySelector('.opt[data-k="'+(parseInt(k)-1)+'"]'); if(btn&&!btn.disabled){btn.click();ev.preventDefault();return;}
+    }
+    if(Q.answered && (k==="Enter"||k===" ")){ const nb=document.getElementById("nextbtn"); if(nb){nb.click();ev.preventDefault();return;} }
+  }
+  // simulacro
+  if(examTimer){
+    if(["1","2","3"].includes(k)){ const q=eQs[eIdx]; if(q){ eSelect(q._ord[parseInt(k)-1]); ev.preventDefault(); } }
+    else if(k==="ArrowRight"||k==="Enter"){ eNav(1); ev.preventDefault(); }
+    else if(k==="ArrowLeft"){ eNav(-1); ev.preventDefault(); }
+  }
+  // flashcards
+  if(fQueue.length&&fIdx<fQueue.length&&document.querySelector(".fcard")){
+    if(k===" "){ fFlip(); ev.preventDefault(); }
+    else if(fShown&&["1","2","3"].includes(k)){ fGrade(parseInt(k)-1); ev.preventDefault(); }
+  }
+});
 
 /* ================== ARRANQUE ================== */
 renderNav();
+updateTop();
 home();
-/* fin */
+
 </script>
 </body>
 </html>
